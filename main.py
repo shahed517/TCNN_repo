@@ -10,13 +10,14 @@ from torch.utils.data import Dataset, DataLoader
 from torch import nn, optim
 import matplotlib.pyplot as plt
 from machine_learning import sEEG_Dataset, train_model, evaluate_model, save_loss_plot
-from machine_learning import TemporalCNN_deep, evaluate_model_twiceT
+from machine_learning import TemporalCNN_deep
 from machine_learning import VocalMind_model, compute_mcd
 from tcnn_utils import get_fold_i, sEEG_EvalDataset
 from pystoi import stoi
 from scipy.spatial.distance import euclidean
 from fastdtw import fastdtw
 import librosa, pysptk, pyworld
+from sklearn.decomposition import PCA
 
 def load_checkpoint(filepath, device):
     assert os.path.isfile(filepath)
@@ -31,7 +32,6 @@ sys.path.append(os.path.dirname('/home/ahmed348/SingleWordProductionDutch/hifiga
 
 from models import Generator
 from env import AttrDict
-
 
 def generate_audio_hifiGAN(mel_spec, output_dir, sampling_rate, filename, device):
     config_file = '/home/ahmed348/SingleWordProductionDutch/hifigan/pretrained/UNIVERSAL_V1/config.json'
@@ -133,7 +133,10 @@ def calculate_speech_perception_metrics(path1, path2):
 import matplotlib.pyplot as plt
 import tikzplotlib, argparse
 
+# run this for evaluation (note the kernel size)
+# python /home/ahmed348/TCNN_repo/main.py --T 6 --root_keyword HGA_LFC --model tcnn --kernel_size 15,15,15 --just_evaluate True --speech_only_eval True
 
+## WINNER -> 15,15,15 === 1, 3, 5 --> R.Field size = 1.27 sec
 if __name__=="__main__":
     np.random.seed(42)
     random.seed(4)
@@ -144,6 +147,7 @@ if __name__=="__main__":
     parser.add_argument("--testT", type=int, default=3, help="duration of test eeg/spec segments")
     parser.add_argument("--just_evaluate", type=lambda x: x.lower() == "true", default=False, help="Set to true or false")
     parser.add_argument("--lfc_cutoff", type=int, default=30, help="cutoff frequncy of LFC")
+    parser.add_argument("--causality", type=int, default=0, help="causality of convolutions")
     
     parser.add_argument("--sub", type=str, default="0,1,2,3,4,5,6,7,8,9", help="Comma-separated subject indices")
     parser.add_argument("--folds", type=str, default="0,1,2,3,4,5,6,7,8,9", help="Comma-separated fold indices")
@@ -152,6 +156,7 @@ if __name__=="__main__":
     parser.add_argument("--kernel_size", type=str, default="7,7,7", help="kernel size of Conv. layers")
     parser.add_argument("--root_keyword", type=str, default="HGA_LFC", help="specify experiment")
     parser.add_argument("--speech_only_eval", type=lambda x: x.lower() == "true", default=False, help="Set to true or false")
+    parser.add_argument("--silence_only_eval", type=lambda x: x.lower() == "true", default=False, help="Set to true or false")
 
     parser.add_argument("--batch_size", type=int, default=64, help="batch size")
     parser.add_argument("--lr", type=float, default=1e-4, help="learning rate") 
@@ -160,6 +165,7 @@ if __name__=="__main__":
     parser.add_argument("--nfolds", type=int, default=10, help="Number of folds for KFold")
     parser.add_argument("--model", type=str, default="TCNN", help="specify model")
     parser.add_argument("--aug", type=lambda x: x.lower() == "true", default=True, help="Set to true or false")
+    parser.add_argument("--use_pca", type=lambda x: x.lower() == "true", default=False, help="Set to true or false")
 
     args = parser.parse_args()
 
@@ -177,10 +183,7 @@ if __name__=="__main__":
     else:
         KEYWORD =  f'{ROOT_KEYWORD}_fc_{args.lfc_cutoff}' ## for experiments with lfc_cutoff
 
-    if DILATIONS[0] != 5 or KERNELS[0] != 7:
-        WEIGHTS_KEYWORD = f'{KEYWORD}_{dil_str}_{kernel_str}' ## for the dilation/kernel_size experiments.
-    else:
-        WEIGHTS_KEYWORD = KEYWORD  ## uses the DEFAULT setting
+    WEIGHTS_KEYWORD = f'{KEYWORD}_{dil_str}_{kernel_str}' ## for the dilation/kernel_size experiments.
 
     if args.first_layer_ch != 128:
         WEIGHTS_KEYWORD = f'{WEIGHTS_KEYWORD}_{args.first_layer_ch}_ch' ## for the conv channel experiments.
@@ -191,7 +194,19 @@ if __name__=="__main__":
     WEIGHTS_KEYWORD = f'{WEIGHTS_KEYWORD}_{args.total_iter}_T_{args.T}'
 
     feat_path = f'/scratch/gilbreth/ahmed348/Dutch_dataset_features/TCNN_folder/FEATURES/features_{KEYWORD}'
-    result_path = f'/scratch/gilbreth/ahmed348/Dutch_dataset_features/TCNN_folder/RESULTS/results_{WEIGHTS_KEYWORD}' ## this is where the final TCNN results will be saved
+
+    if args.causality>0:
+        WEIGHTS_KEYWORD = f'{WEIGHTS_KEYWORD}_causal'
+    elif args.causality<0:
+        WEIGHTS_KEYWORD = f'{WEIGHTS_KEYWORD}_anti_causal'
+
+    if args.use_pca:
+        WEIGHTS_KEYWORD = f'{WEIGHTS_KEYWORD}_pca'
+    
+    if args.speech_only_eval:
+        result_path = f'/scratch/gilbreth/ahmed348/Dutch_dataset_features/TCNN_folder/RESULTS/results_{WEIGHTS_KEYWORD}_speech_only_eval'
+    else:
+        result_path = f'/scratch/gilbreth/ahmed348/Dutch_dataset_features/TCNN_folder/RESULTS/results_{WEIGHTS_KEYWORD}' ## this is where the final TCNN results will be saved
 
     # feat_path = '/scratch/gilbreth/ahmed348/Dutch_dataset_features/features_vocalmind'
     # result_path = '/scratch/gilbreth/ahmed348/Dutch_dataset_features/vocalmind_results'
@@ -224,6 +239,7 @@ if __name__=="__main__":
     VA_LABELS = [] 
     MCD_SCORES = []
     PCC_all = []; MCD_all = []; STOI_all = []
+    PCC_SEQ_all = []; VAs_all = []
 
     for pNr, pt in enumerate(pts):
         if pNr not in sub_list: # just on the first one/two patients for now 
@@ -238,7 +254,7 @@ if __name__=="__main__":
         # Save the correlation coefficients for each fold
         fold_wise_pcc = []
         fold_wise_mse = []
-        MCDs = []; STOIs = []
+        MCDs = []; STOIs = []; PCC_SEQs = []; VAs = []
 
         for k in range(args.nfolds):
             if k not in fold_list: # just on the first one/two patients for now 
@@ -254,6 +270,23 @@ if __name__=="__main__":
 
             X_train = (X_train - channel_means_train)/channel_stds_train
             X_test = (X_test - channel_means_test)/channel_stds_test
+
+            if args.use_pca:
+                # Fit PCA without fixing k first
+                pca_full = PCA()
+                pca_full.fit(X_train)   # shape: (N_samples, C)
+                # Cumulative explained variance
+                cumvar = np.cumsum(pca_full.explained_variance_ratio_)
+                # Smallest k that reaches 90%
+                pca_k = np.searchsorted(cumvar, 0.90) + 1
+                print(f"Chosen k = {pca_k}, explained variance = {cumvar[pca_k-1]:.4f}")
+
+                pca = PCA(n_components=pca_k, svd_solver="full")
+                X_train_pca = pca.fit_transform(X_train)   # (N, pca_k)
+                X_test_pca  = pca.transform(X_test)        # (N, pca_k)
+                X_train = X_train_pca
+                X_test = X_test_pca 
+                print("Explained variance:", pca.explained_variance_ratio_.sum())
 
             X_train = torch.from_numpy(X_train)
             y_train = torch.from_numpy(y_train)
@@ -273,14 +306,16 @@ if __name__=="__main__":
             input_channels = X_train.shape[-1]   
             feature_length = y_train.shape[-2]   
             output_dim = n_mels
-            
 
             if args.model.lower() == "tcnn": ## default
-                model = TemporalCNN_deep(input_channels, output_dim, KERNELS, DILATIONS, args.first_layer_ch).to(DEVICE) ## for HGA-only and HGA-LFC with fc<51
+                model = TemporalCNN_deep(input_channels, output_dim, KERNELS, DILATIONS, args.first_layer_ch, args.causality).to(DEVICE) ## for HGA-only and HGA-LFC with fc<51
                 print('chosing the tcnn model!')
             elif args.model.lower() == "vocalmind":
                 model = VocalMind_model(input_channels, output_dim, args.T).to(DEVICE)
                 print('chosing the vocalmind model!')
+            else:
+                print('specify model properly!')
+                exit()
             total_params = sum(p.numel() for p in model.parameters())
             print(f"Total number of parameters: {total_params}")
 
@@ -307,7 +342,7 @@ if __name__=="__main__":
                 print('%s, fold %s has train correlation of %f' % (pt, k, np.mean(pcc_train)))
             
             # Predict the reconstructed spectrogram for the test data 
-            mse_test, pcc_test, [gt_spec, pred_spec] = evaluate_model(model, test_loader, MODEL_SAVE_PATH, speech_only_testing=args.speech_only_eval)
+            mse_test, pcc_test, [gt_spec, pred_spec] = evaluate_model(model, test_loader, MODEL_SAVE_PATH, speech_only_testing=args.speech_only_eval, silence_only_testing=args.silence_only_eval)
 
             if JUST_EVALUATE:
                 generate_audio_hifiGAN(pred_spec, result_path, audiosr, f'{pt}_fold_{k}_pred.wav', DEVICE)
@@ -320,14 +355,13 @@ if __name__=="__main__":
 
             # rec_spec[test, :] = pred_spec
             print(f'predicted spectrogram shape: {pred_spec.shape}')
-            fold_wise_pcc.append(np.mean(pcc_test))
+            fold_wise_pcc.append(pcc_test)
             fold_wise_mse.append(np.mean(mse_test))
              
             # Show evaluation result
             print(f'fold : {k}:\n')
-            print('%s, fold %s has test correlation of %f' % (pt, k, np.mean(pcc_test)))
+            print('%s, fold %s has test correlation of %f' % (pt, k, pcc_test))
             print('%s, fold %s has test mse of %f' % (pt, k, mse_test))
-            # print('%s, fold %s has test mcd of %f' % (pt, k, mcd))
 
         print('%s has test correlation of %f' % (pt, np.mean(np.array(fold_wise_pcc))))
         FINAL_MEAN_SCORES.append(np.mean(np.array(fold_wise_pcc)))
@@ -341,19 +375,19 @@ if __name__=="__main__":
 
     print(f'final PCC scores for all folds: {FINAL_SCORES}')
     print(f'Avg PCC scores for each subject: {FINAL_MEAN_SCORES}')
-    print(FINAL_SCORES)
-    print(FINAL_MSE)
+    print(f'final averaged MSE score of all {nfolds} folds : {FINAL_MSE}')
 
     if JUST_EVALUATE:
         results = {
         "MCD": MCD_all,
         "STOI": STOI_all,
-        "PCC": PCC_all
+        "PCC": PCC_all,
         }
-
         # Save to file
         if args.speech_only_eval:
             pkl_file = f"/home/ahmed348/TCNN_repo/pkl_files/TCNN_{WEIGHTS_KEYWORD}_speech_only.pkl"
+        elif args.silence_only_eval:
+            pkl_file = f"/home/ahmed348/TCNN_repo/pkl_files/TCNN_{WEIGHTS_KEYWORD}_sil_only.pkl"
         else:
             pkl_file = f"/home/ahmed348/TCNN_repo/pkl_files/TCNN_{WEIGHTS_KEYWORD}.pkl"
 

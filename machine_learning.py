@@ -173,11 +173,9 @@ def compute_mcd(sample, y, sr_desired=16000):
     mcd = mcd_calc(mfcc_y, mfcc_y_)
     return mcd
     
-
-class TemporalCNN_deep(nn.Module):
+class TemporalCNN_deep_vanilla(nn.Module):
     def __init__(self, input_channels=127, output_size=80, kernel_size = [15,15,15], dilations=[5,7,9], first_layer_ch=128):
-        super(TemporalCNN_deep, self).__init__()
-        # Default convolutional parameters if none are provided
+        super(TemporalCNN_deep_vanilla, self).__init__()
         conv_params = [
             (first_layer_ch, kernel_size[0], dilations[0], 0.5),  # (out_channels, kernel_size, dilation, dropout_rate)
             (first_layer_ch*2, kernel_size[1], dilations[1], 0.5),
@@ -209,7 +207,7 @@ class TemporalCNN_deep(nn.Module):
         # Fully connected layers
         self.fc = nn.Sequential(
             nn.Linear(self.total_channels, self.total_channels//2),  # in_channels is the output of the last conv block
-            # nn.BatchNorm1d(105), # number of time steps
+            ## nn.BatchNorm1d(105), # number of time steps
             nn.ReLU(),
             nn.Dropout(0.5),
             nn.Linear(self.total_channels//2, output_size)
@@ -228,7 +226,69 @@ class TemporalCNN_deep(nn.Module):
         x = x.permute(0, 2, 1)
         return self.fc(x)
 
-    
+class TemporalCNN_deep(nn.Module):
+    def __init__(self, input_channels=127, output_size=80, kernel_size = [15,15,15], dilations=[5,7,9], first_layer_ch=128, causality=0):
+        super(TemporalCNN_deep, self).__init__()
+        # Default convolutional parameters if none are provided
+        conv_params = [
+            (first_layer_ch, kernel_size[0], dilations[0], 0.5),  # (out_channels, kernel_size, dilation, dropout_rate)
+            (first_layer_ch*2, kernel_size[1], dilations[1], 0.5),
+            (first_layer_ch*4, kernel_size[2], dilations[2], 0.5)
+            ## (512, 15, 7, 0.5)
+        ]
+        # Create convolutional blocks dynamically 
+        # self.total_channels = sum(out_channels for out_channels, _, _, _ in conv_params)
+        self.total_channels = conv_params[-1][0]
+        self.conv_blocks = nn.ModuleList()
+        self.causality = causality
+        in_channels = input_channels
+        self.padding_causality = []
+        for out_channels, kernel_size, dilation, dropout_rate in conv_params:
+            conv_block = nn.Sequential(
+                nn.Conv1d(
+                    in_channels=in_channels,
+                    out_channels=out_channels,
+                    kernel_size=kernel_size,
+                    stride=1,
+                    dilation=dilation,
+                    padding=0  # Ensures output length = input length
+                ),
+                nn.BatchNorm1d(out_channels),
+                nn.ReLU(),
+                # squeeze_and_excite(out_channels),
+                nn.Dropout(dropout_rate)
+            )
+            self.padding_causality.append(dilation*(kernel_size-1))
+            self.conv_blocks.append(conv_block)
+            in_channels = out_channels  # Update input channels for the next block
+        # Fully connected layers
+        self.fc = nn.Sequential(
+            nn.Linear(self.total_channels, self.total_channels//2),  # in_channels is the output of the last conv block
+            ## nn.BatchNorm1d(105), # number of time steps
+            nn.ReLU(),
+            nn.Dropout(0.5),
+            nn.Linear(self.total_channels//2, output_size)
+        )
+        self.first_dropout = nn.Dropout(0.1)
+
+    def forward(self, x):
+        # Input shape: (batch_size, timesteps, channels)
+        x = x.permute(0, 2, 1)  # -> (batch_size, channels, timesteps)
+        x = self.first_dropout(x)
+        for i, conv_block in enumerate(self.conv_blocks):
+            pad = self.padding_causality[i]
+            if pad > 0:
+                if self.causality > 0: # causal: only past
+                    x = F.pad(x, (pad, 0))
+                elif self.causality < 0: # anti-causal: only future
+                    x = F.pad(x, (0, pad))
+                else: # non-causal: symmetric ("same")
+                    left = pad // 2
+                    right = pad - left
+                    x = F.pad(x, (left, right))
+            x = conv_block(x)
+        x = x.permute(0, 2, 1)  # -> (batch_size, timesteps, channels)
+        return self.fc(x)
 
 def calculate_receptive_field(conv_params):
     receptive_field = 1  # Starting with a single element
@@ -300,38 +360,77 @@ def train_model(model, train_loader, test_loader, criterion, optimizer, num_epoc
         model.train()
     return train_loss_plot, val_loss_plot
 
-# Define inference function
-def evaluate_model(model, test_loader, PATH, speech_only_testing=False, drop_edges = False, DEVICE=DEVICE):
-    model.load_state_dict(torch.load(PATH, weights_only=True)) # not really necessary!
-    model.eval()
-    rec_spec = []; va_labels = []; gt_spec = []
-    running_mse = 0
-    with torch.no_grad():
-        for X_batch, y_batch, va_labels in test_loader: 
-            # print(f'X batch shape : {X_batch.shape}')
-            # print(f'y batch shape : {y_batch.shape}')
-            X_batch, y_batch = X_batch.to(DEVICE), y_batch.to(DEVICE) 
-            outputs = model(X_batch) ## take the first element in batch
-            if drop_edges: ## somehow doing this is bad?!
-                outputs = outputs[64:, :]; y_batch = y_batch[64:, :]; va_label = va_label[64:, :] # do it for the va_labels also!
-                outputs = outputs[:-64, :]; y_batch = y_batch[:-64, :]; va_label = va_label[:-64, :] ## drop the elements for which the RF is missing
-            indices = np.where(va_labels[0] == 1)[0]
-            if speech_only_testing:
-                rec_spec.append(outputs[indices, :].cpu().numpy())  ## remove the batch dimension
-                gt_spec.append(y_batch[indices, :].cpu().numpy())
-            else:
-                rec_spec.append(outputs[0].cpu().numpy())  ## remove the batch dimension
-                gt_spec.append(y_batch[0].cpu().numpy())
-            running_mse += F.mse_loss(outputs, y_batch)
-    stacked_predictions = np.vstack(rec_spec) ## for 2D arrays, stacks along axis=0 (row)
-    stacked_gt = np.vstack(gt_spec)
-    mse_score = running_mse.item()/len(test_loader)
+def compute_pcc(gt_mat, pred_mat):
+    """
+    Computes PCC per mel bin across time, then nanmean across bins.
+    This gives consistent behavior for:
+        - full sequence
+        - speech only
+        - silence only
+    """
     R = []
-    for specBin in range(stacked_predictions.shape[1]):
-        r, p = pearsonr(stacked_gt[:, specBin], stacked_predictions[:, specBin]) # default axis = 0, across the column
-        R.append(r) # make of list of all spectral coefficients
-    pcc_score = np.array(R)
-    return mse_score, pcc_score, [stacked_gt, stacked_predictions]
+    for b in range(gt_mat.shape[1]):
+        g = gt_mat[:, b]
+        p = pred_mat[:, b]
+        if np.var(g) < 1e-8:      # zero-variance bin -> correlation undefined
+            R.append(np.nan)
+            continue
+        r, _ = pearsonr(g, p)
+        R.append(r)
+    return np.nanmean(R)
+
+def evaluate_model(model, test_loader, PATH, speech_only_testing=False, silence_only_testing=False, DEVICE=DEVICE):
+    model.load_state_dict(torch.load(PATH, weights_only=True))
+    model.eval()
+    # Mode selection
+    if speech_only_testing:
+        alpha = 1   # speech
+    elif silence_only_testing:
+        alpha = 0   # silence
+    rec_spec = []; gt_spec  = []
+    running_mse = 0.0; total_mse_frames= 0
+    with torch.no_grad():
+        for X_batch, y_batch, va_labels in test_loader:
+            X_batch = X_batch.to(DEVICE)
+            y_batch = y_batch.to(DEVICE)
+            outputs = model(X_batch)    # (B, T, M)
+            outputs_np = outputs[0].cpu().numpy()
+            y_np       = y_batch[0].cpu().numpy()
+            va_np      = va_labels[0].numpy()
+            # Choose frame indices
+            if speech_only_testing or silence_only_testing:
+                indices = np.where(va_np == alpha)[0]
+            else:
+                indices = np.arange(outputs_np.shape[0])
+            # Extract selected frames
+            rec_spec.append(outputs_np[indices])
+            gt_spec.append(y_np[indices])
+            
+            if speech_only_testing or silence_only_testing:
+                # gather selected frames as tensors
+                sel_pred = outputs[0, indices, :]  # (T', M)
+                sel_gt   = y_batch[0, indices, :]
+                mse_val = F.mse_loss(sel_pred, sel_gt, reduction='sum').item()
+                running_mse += mse_val
+                total_mse_frames += sel_pred.numel()
+            else:
+                # Default (original): MSE over full sequence
+                mse_val = F.mse_loss(outputs, y_batch, reduction='sum').item()
+                running_mse += mse_val
+                total_mse_frames += outputs.numel()
+
+    # Stack all selected frames from dataset
+    stacked_predictions = np.vstack(rec_spec)   # (T', M)
+    stacked_gt          = np.vstack(gt_spec)    # (T', M)
+    mse_score = running_mse / total_mse_frames
+    if speech_only_testing or silence_only_testing:
+        pcc_value = compute_pcc(stacked_gt, stacked_predictions)
+        return mse_score, pcc_value, [stacked_gt, stacked_predictions]
+    else:
+        # full evaluation
+        pcc_score = compute_pcc(stacked_gt, stacked_predictions)
+        return mse_score, pcc_score, [stacked_gt, stacked_predictions]
+
 
 def evaluate_model_RF(model, test_loader, PATH, speech_only_testing=False):
     model.load_state_dict(torch.load(PATH, weights_only=True)) # not really necessary!
@@ -420,12 +519,12 @@ def evaluate_model_twiceT(model, test_loader, PATH, speech_only_testing=False):
 if __name__ == "__main__":
     np.random.seed(42)
     # Initialize model
-    # model = TemporalCNN_deep(127, 80)
-    model = VocalMind_model(127, 80)
+    model = TemporalCNN_deep(127, 80, causality=-1)
+    # model = VocalMind_model(127, 80)
     model = model.to(DEVICE) 
 
     model.eval()
-    random_X = torch.rand(size = (8, 1200, 127)).to(DEVICE)
+    random_X = torch.rand(size = (8, 600, 127)).to(DEVICE)
     random_Y = model(random_X)
     print(f'Input shape: {random_X.shape}')
     print(f'output shape: {random_Y.shape}')

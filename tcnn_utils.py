@@ -84,5 +84,12 @@ def get_fold_i(X, y, va, k, i): ## k is total folds
         X_train = np.concatenate((X[:val_start], X[val_end:]), axis=0)
         y_train = np.concatenate((y[:val_start], y[val_end:]), axis=0)
         va_train = np.concatenate((va[:val_start], va[val_end:]), axis=0)
-
+    
+    N = min(X_train.shape[0], y_train.shape[0])
+    if X_train.shape[0] > y_train.shape[0]:
+        X_train = X_train[:N]
+    else:
+        y_train = y_train[:N]
+    va_train = va_train[:N]
+    
     return X_train, y_train, va_train, X_val, y_val, va_val
