@@ -150,6 +150,7 @@ if __name__=="__main__":
     win_length = 1100  # Default for HiFi-GAN to make a 0.05 sec long window
     n_fft = win_length  # Default for HiFi-GAN
 
+    speech_frame_percentages = []
     ROOT_KEYWORD = args.root_keyword # LFC_only/HGA_only/HGA_LFC, etc.
     if args.lfc_cutoff == 30:
         KEYWORD = f'{args.root_keyword}' ## for pooling the appropriate data, DEFAULT ONE!
@@ -187,6 +188,10 @@ if __name__=="__main__":
         threshold = np.mean(rms) * 0.1
         va_label = (rms > threshold).astype(int)  # 1 = speech, 0 = silence
         print(f'va label shape (before adjusting): {va_label.shape}')
+        percent_ones = va_label.mean() * 100
+        speech_frame_percentages.append(percent_ones)
+        print(f'Percentage of speech (1s): {percent_ones:.2f}%')
+
 
         # eeg_segments, mel_segments, va_labels = make_eeg_spec_pairs(audio, eeg_hga_lfc, T=args.T, n_mels=args.n_mels, 
                                                                     # stride=args.stride, audio_sr=hifiGAN_sr, eeg_sr = eeg_sr_new)
@@ -228,8 +233,8 @@ if __name__=="__main__":
         print(f'spectrogram shape (after adjusting): {mel.shape}') 
         print(f'va label shape (after adjusting): {va_label.shape}') 
 
-        np.save(os.path.join(path_output,f'{participant}_feat.npy'), eeg_hga_lfc)
-        np.save(os.path.join(path_output,f'{participant}_spec.npy'), mel)
-        np.save(os.path.join(path_output,f'{participant}_va.npy'), va_label)
+        # np.save(os.path.join(path_output,f'{participant}_feat.npy'), eeg_hga_lfc)
+        # np.save(os.path.join(path_output,f'{participant}_spec.npy'), mel)
+        # np.save(os.path.join(path_output,f'{participant}_va.npy'), va_label)
 
-    
+    print(f'Total Percentage of speech across all subjects: {np.mean(np.array(speech_frame_percentages)):.2f}%')

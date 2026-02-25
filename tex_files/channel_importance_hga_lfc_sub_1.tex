@@ -1,0 +1,107 @@
+% Wed Feb 25 11:42:08 2026
+% This file was created with matplot2tikz v0.5.3.
+\begin{tikzpicture}
+\providecommand{\thisXlabelopacity}{1.0}%
+\providecommand{\figheight}{310pt}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
+}{}%
+\providecommand{\thisYlabelopacity}{1.0}%
+\providecommand{\figwidth}{360pt}%
+\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
+}{}%
+\provideboolean{CLEARXLABEL}\ifthenelse{\boolean{CLEARXLABEL}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\provideboolean{NOLEGEND}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
+}{}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
+}{}%
+\pgfplotsset{compat=1.18}%
+\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
+	\pgfplotsset{every axis post/.append style={title = {} }}%
+}{}%
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+
+\begin{axis}[
+tick align=outside,
+tick pos=left,
+title={P1},
+x grid style={darkgray176},
+xmin=-1.64, xmax=25.64,
+xtick style={color=black},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xticklabels={
+  ctx\_lh\_G\_and\_S\_subcentral,
+  ctx\_lh\_S\_central,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_S\_central,
+  ctx\_rh\_G\_and\_S\_occipital\_inf,
+  Left-Cerebral-White-Matter,
+  ctx\_rh\_S\_occipital\_ant,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_G\_and\_S\_subcentral,
+  Left-Cerebral-White-Matter,
+  ctx\_rh\_S\_occipital\_ant,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
+  ctx\_rh\_S\_occipital\_ant,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_circular\_insula\_sup,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_G\_and\_S\_occipital\_inf,
+  ctx\_lh\_S\_circular\_insula\_sup,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_central
+},
+y grid style={darkgray176},
+ylabel={\(\displaystyle I\_c\) (normalized)},
+ymin=0, ymax=0.021395084168762,
+ytick style={color=black},
+every axis x label/.append style={opacity=\thisXlabelopacity},
+every axis y label/.append style={opacity=\thisYlabelopacity},
+height=\figheight,
+width=\figwidth,
+xticklabel style={rotate=45.0,anchor=east,font=\tiny}
+]
+\draw[draw=black,fill=red] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0203762706369162);
+\draw[draw=black,fill=red] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0198517199605703);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0162463989108801);
+\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0155581152066588);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0130421333014965);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0123831732198596);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0115027446299791);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0104058785364032);
+\draw[draw=black,fill=red] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0102111026644707);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00983323063701391);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00957969482988119);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00937395170331001);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00895251333713531);
+\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00861423555761576);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00860509648919106);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00805801339447498);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00801952742040157);
+\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00791254546493292);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00757210282608867);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00744734006002545);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00731847994029522);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00730085978284478);
+\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00728353392332792);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00727991294115782);
+\draw[draw=black,fill=red] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00716152274981141);
+\ifthenelse{\boolean{NOLEGEND}}{\legend{}}{}
+\end{axis}
+
+\end{tikzpicture}

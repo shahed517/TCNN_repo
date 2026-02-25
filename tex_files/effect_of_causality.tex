@@ -1,0 +1,1419 @@
+% Tue Feb 24 11:26:16 2026
+% This file was created with matplot2tikz v0.5.3.
+\begin{tikzpicture}
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
+}{}%
+\provideboolean{CLEARXLABEL}\ifthenelse{\boolean{CLEARXLABEL}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\providecommand{\thisXlabelopacity}{1.0}%
+\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
+	\pgfplotsset{every axis post/.append style={title = {} }}%
+}{}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
+}{}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
+}{}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\pgfplotsset{compat=1.18}%
+\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
+}{}%
+\provideboolean{NOLEGEND}%
+\providecommand{\figheight}{310pt}%
+\providecommand{\thisYlabelopacity}{1.0}%
+\providecommand{\figwidth}{360pt}%
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{lightgreen}{RGB}{144,238,144}
+\definecolor{salmon}{RGB}{250,128,114}
+\definecolor{skyblue}{RGB}{135,206,235}
+
+\begin{axis}[
+legend cell align={left},
+legend style={
+  fill opacity=0.8,
+  draw opacity=1,
+  text opacity=1,
+  at={(0.97,0.03)},
+  anchor=south east,
+  draw=lightgray204
+},
+tick align=outside,
+tick pos=left,
+x grid style={darkgray176},
+xmajorgrids,
+xmin=0.32, xmax=10.68,
+xtick style={color=black},
+xtick={1,2,3,4,5,6,7,8,9,10},
+xticklabels={sub-1,sub-2,sub-3,sub-4,sub-5,sub-6,sub-7,sub-8,sub-9,sub-10},
+y grid style={darkgray176},
+ylabel={STOI},
+ymajorgrids,
+ymin=0.104447559271714, ymax=0.833102724241738,
+ytick style={color=black},
+every axis x label/.append style={opacity=\thisXlabelopacity},
+every axis y label/.append style={opacity=\thisYlabelopacity},
+height=\figheight,
+width=\figwidth
+]
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:0.7525,0.4137281058262)
+--(axis cs:0.8875,0.4137281058262)
+--(axis cs:0.8875,0.450614950641183)
+--(axis cs:0.7525,0.450614950641183)
+--(axis cs:0.7525,0.4137281058262)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+0.82 0.4137281058262
+0.82 0.390362798802709
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.82 0.450614950641183
+0.82 0.47232618610961
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.78625 0.390362798802709
+0.85375 0.390362798802709
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.78625 0.47232618610961
+0.85375 0.47232618610961
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:0.9325,0.290127385284845)
+--(axis cs:1.0675,0.290127385284845)
+--(axis cs:1.0675,0.347689739934266)
+--(axis cs:0.9325,0.347689739934266)
+--(axis cs:0.9325,0.290127385284845)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+1 0.290127385284845
+1 0.25624518422737
+};
+\addplot [semithick, black, forget plot]
+table {%
+1 0.347689739934266
+1 0.413321023854767
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.96625 0.25624518422737
+1.03375 0.25624518422737
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.96625 0.413321023854767
+1.03375 0.413321023854767
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:1.1125,0.421769529198446)
+--(axis cs:1.2475,0.421769529198446)
+--(axis cs:1.2475,0.472578899191718)
+--(axis cs:1.1125,0.472578899191718)
+--(axis cs:1.1125,0.421769529198446)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+1.18 0.421769529198446
+1.18 0.360077710351682
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.18 0.472578899191718
+1.18 0.494513117768968
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.14625 0.360077710351682
+1.21375 0.360077710351682
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.14625 0.494513117768968
+1.21375 0.494513117768968
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:1.7525,0.365104652571528)
+--(axis cs:1.8875,0.365104652571528)
+--(axis cs:1.8875,0.436128745056938)
+--(axis cs:1.7525,0.436128745056938)
+--(axis cs:1.7525,0.365104652571528)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+1.82 0.365104652571528
+1.82 0.34226064544226
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.82 0.436128745056938
+1.82 0.467924118130782
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.78625 0.34226064544226
+1.85375 0.34226064544226
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.78625 0.467924118130782
+1.85375 0.467924118130782
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:1.9325,0.32147516027523)
+--(axis cs:2.0675,0.32147516027523)
+--(axis cs:2.0675,0.398578561377909)
+--(axis cs:1.9325,0.398578561377909)
+--(axis cs:1.9325,0.32147516027523)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+2 0.32147516027523
+2 0.287369635024048
+};
+\addplot [semithick, black, forget plot]
+table {%
+2 0.398578561377909
+2 0.434055213851275
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.96625 0.287369635024048
+2.03375 0.287369635024048
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.96625 0.434055213851275
+2.03375 0.434055213851275
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:2.1125,0.405892852547465)
+--(axis cs:2.2475,0.405892852547465)
+--(axis cs:2.2475,0.441229836048564)
+--(axis cs:2.1125,0.441229836048564)
+--(axis cs:2.1125,0.405892852547465)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+2.18 0.405892852547465
+2.18 0.366097645499827
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.18 0.441229836048564
+2.18 0.489185537153381
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.14625 0.366097645499827
+2.21375 0.366097645499827
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.14625 0.489185537153381
+2.21375 0.489185537153381
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:2.7525,0.412509748396542)
+--(axis cs:2.8875,0.412509748396542)
+--(axis cs:2.8875,0.4848244223758)
+--(axis cs:2.7525,0.4848244223758)
+--(axis cs:2.7525,0.412509748396542)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+2.82 0.412509748396542
+2.82 0.344778187758855
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.82 0.4848244223758
+2.82 0.510828790018642
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.78625 0.344778187758855
+2.85375 0.344778187758855
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.78625 0.510828790018642
+2.85375 0.510828790018642
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:2.9325,0.510766347438939)
+--(axis cs:3.0675,0.510766347438939)
+--(axis cs:3.0675,0.557330894664689)
+--(axis cs:2.9325,0.557330894664689)
+--(axis cs:2.9325,0.510766347438939)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+3 0.510766347438939
+3 0.503253492530787
+};
+\addplot [semithick, black, forget plot]
+table {%
+3 0.557330894664689
+3 0.624078190476199
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.96625 0.503253492530787
+3.03375 0.503253492530787
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.96625 0.624078190476199
+3.03375 0.624078190476199
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:3.1125,0.531698240211231)
+--(axis cs:3.2475,0.531698240211231)
+--(axis cs:3.2475,0.593791377620715)
+--(axis cs:3.1125,0.593791377620715)
+--(axis cs:3.1125,0.531698240211231)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+3.18 0.531698240211231
+3.18 0.50692606357667
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.18 0.593791377620715
+3.18 0.627693107029252
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.14625 0.50692606357667
+3.21375 0.50692606357667
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.14625 0.627693107029252
+3.21375 0.627693107029252
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:3.7525,0.437699486474821)
+--(axis cs:3.8875,0.437699486474821)
+--(axis cs:3.8875,0.478497888547327)
+--(axis cs:3.7525,0.478497888547327)
+--(axis cs:3.7525,0.437699486474821)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+3.82 0.437699486474821
+3.82 0.407969793694695
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.82 0.478497888547327
+3.82 0.493065315768977
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.78625 0.407969793694695
+3.85375 0.407969793694695
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.78625 0.493065315768977
+3.85375 0.493065315768977
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:3.9325,0.454587892081306)
+--(axis cs:4.0675,0.454587892081306)
+--(axis cs:4.0675,0.497123208953449)
+--(axis cs:3.9325,0.497123208953449)
+--(axis cs:3.9325,0.454587892081306)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+4 0.454587892081306
+4 0.426136460142644
+};
+\addplot [semithick, black, forget plot]
+table {%
+4 0.497123208953449
+4 0.534050214351713
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.96625 0.426136460142644
+4.03375 0.426136460142644
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.96625 0.534050214351713
+4.03375 0.534050214351713
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:4.1125,0.524979410344815)
+--(axis cs:4.2475,0.524979410344815)
+--(axis cs:4.2475,0.570315308617348)
+--(axis cs:4.1125,0.570315308617348)
+--(axis cs:4.1125,0.524979410344815)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+4.18 0.524979410344815
+4.18 0.504368062912522
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.18 0.570315308617348
+4.18 0.592523033178134
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.14625 0.504368062912522
+4.21375 0.504368062912522
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.14625 0.592523033178134
+4.21375 0.592523033178134
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:4.7525,0.282028125288844)
+--(axis cs:4.8875,0.282028125288844)
+--(axis cs:4.8875,0.391668517279411)
+--(axis cs:4.7525,0.391668517279411)
+--(axis cs:4.7525,0.282028125288844)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+4.82 0.282028125288844
+4.82 0.175420464950613
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.82 0.391668517279411
+4.82 0.41456422365342
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.78625 0.175420464950613
+4.85375 0.175420464950613
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.78625 0.41456422365342
+4.85375 0.41456422365342
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:4.9325,0.30060293112855)
+--(axis cs:5.0675,0.30060293112855)
+--(axis cs:5.0675,0.359887456320933)
+--(axis cs:4.9325,0.359887456320933)
+--(axis cs:4.9325,0.30060293112855)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+5 0.30060293112855
+5 0.270161623502636
+};
+\addplot [semithick, black, forget plot]
+table {%
+5 0.359887456320933
+5 0.389589036069018
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.96625 0.270161623502636
+5.03375 0.270161623502636
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.96625 0.389589036069018
+5.03375 0.389589036069018
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:5.1125,0.356471940350052)
+--(axis cs:5.2475,0.356471940350052)
+--(axis cs:5.2475,0.400583588161695)
+--(axis cs:5.1125,0.400583588161695)
+--(axis cs:5.1125,0.356471940350052)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+5.18 0.356471940350052
+5.18 0.295300012830473
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.18 0.400583588161695
+5.18 0.434890062195782
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.14625 0.295300012830473
+5.21375 0.295300012830473
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.14625 0.434890062195782
+5.21375 0.434890062195782
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:5.7525,0.432242562333435)
+--(axis cs:5.8875,0.432242562333435)
+--(axis cs:5.8875,0.465114754362594)
+--(axis cs:5.7525,0.465114754362594)
+--(axis cs:5.7525,0.432242562333435)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+5.82 0.432242562333435
+5.82 0.431227900600127
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.82 0.465114754362594
+5.82 0.47278055811566
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.78625 0.431227900600127
+5.85375 0.431227900600127
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.78625 0.47278055811566
+5.85375 0.47278055811566
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:5.9325,0.491026883992886)
+--(axis cs:6.0675,0.491026883992886)
+--(axis cs:6.0675,0.553005216783549)
+--(axis cs:5.9325,0.553005216783549)
+--(axis cs:5.9325,0.491026883992886)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+6 0.491026883992886
+6 0.399338679767868
+};
+\addplot [semithick, black, forget plot]
+table {%
+6 0.553005216783549
+6 0.588260878366366
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.96625 0.399338679767868
+6.03375 0.399338679767868
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.96625 0.588260878366366
+6.03375 0.588260878366366
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:6.1125,0.506450802544487)
+--(axis cs:6.2475,0.506450802544487)
+--(axis cs:6.2475,0.570258192509448)
+--(axis cs:6.1125,0.570258192509448)
+--(axis cs:6.1125,0.506450802544487)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+6.18 0.506450802544487
+6.18 0.44057977628253
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.18 0.570258192509448
+6.18 0.593330150608768
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.14625 0.44057977628253
+6.21375 0.44057977628253
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.14625 0.593330150608768
+6.21375 0.593330150608768
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:6.7525,0.446685099861064)
+--(axis cs:6.8875,0.446685099861064)
+--(axis cs:6.8875,0.526807311746265)
+--(axis cs:6.7525,0.526807311746265)
+--(axis cs:6.7525,0.446685099861064)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+6.82 0.446685099861064
+6.82 0.391269997393386
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.82 0.526807311746265
+6.82 0.550500986171451
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.78625 0.391269997393386
+6.85375 0.391269997393386
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.78625 0.550500986171451
+6.85375 0.550500986171451
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:6.9325,0.459412633739343)
+--(axis cs:7.0675,0.459412633739343)
+--(axis cs:7.0675,0.579685126517658)
+--(axis cs:6.9325,0.579685126517658)
+--(axis cs:6.9325,0.459412633739343)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+7 0.459412633739343
+7 0.357090838870808
+};
+\addplot [semithick, black, forget plot]
+table {%
+7 0.579685126517658
+7 0.613811833544684
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.96625 0.357090838870808
+7.03375 0.357090838870808
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.96625 0.613811833544684
+7.03375 0.613811833544684
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:7.1125,0.503347375943525)
+--(axis cs:7.2475,0.503347375943525)
+--(axis cs:7.2475,0.613295362932796)
+--(axis cs:7.1125,0.613295362932796)
+--(axis cs:7.1125,0.503347375943525)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+7.18 0.503347375943525
+7.18 0.463375942976398
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.18 0.613295362932796
+7.18 0.646549000129507
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.14625 0.463375942976398
+7.21375 0.463375942976398
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.14625 0.646549000129507
+7.21375 0.646549000129507
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:7.7525,0.388571135645844)
+--(axis cs:7.8875,0.388571135645844)
+--(axis cs:7.8875,0.44120043193981)
+--(axis cs:7.7525,0.44120043193981)
+--(axis cs:7.7525,0.388571135645844)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+7.82 0.388571135645844
+7.82 0.354958093194329
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.82 0.44120043193981
+7.82 0.504127070953336
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.78625 0.354958093194329
+7.85375 0.354958093194329
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.78625 0.504127070953336
+7.85375 0.504127070953336
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:7.9325,0.291545401740964)
+--(axis cs:8.0675,0.291545401740964)
+--(axis cs:8.0675,0.339859391768146)
+--(axis cs:7.9325,0.339859391768146)
+--(axis cs:7.9325,0.291545401740964)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+8 0.291545401740964
+8 0.258722546244708
+};
+\addplot [semithick, black, forget plot]
+table {%
+8 0.339859391768146
+8 0.378436221128994
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.96625 0.258722546244708
+8.03375 0.258722546244708
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.96625 0.378436221128994
+8.03375 0.378436221128994
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:8.1125,0.383501015269436)
+--(axis cs:8.2475,0.383501015269436)
+--(axis cs:8.2475,0.484550005182877)
+--(axis cs:8.1125,0.484550005182877)
+--(axis cs:8.1125,0.383501015269436)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+8.18 0.383501015269436
+8.18 0.346525796532637
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.18 0.484550005182877
+8.18 0.50395509218559
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.14625 0.346525796532637
+8.21375 0.346525796532637
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.14625 0.50395509218559
+8.21375 0.50395509218559
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:8.7525,0.319423113444851)
+--(axis cs:8.8875,0.319423113444851)
+--(axis cs:8.8875,0.43645768515823)
+--(axis cs:8.7525,0.43645768515823)
+--(axis cs:8.7525,0.319423113444851)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+8.82 0.319423113444851
+8.82 0.251590401832645
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.82 0.43645768515823
+8.82 0.505202651175062
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.78625 0.251590401832645
+8.85375 0.251590401832645
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.78625 0.505202651175062
+8.85375 0.505202651175062
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:8.9325,0.363661646342127)
+--(axis cs:9.0675,0.363661646342127)
+--(axis cs:9.0675,0.425589417270192)
+--(axis cs:8.9325,0.425589417270192)
+--(axis cs:8.9325,0.363661646342127)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+9 0.363661646342127
+9 0.340474221757739
+};
+\addplot [semithick, black, forget plot]
+table {%
+9 0.425589417270192
+9 0.454538428556311
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.96625 0.340474221757739
+9.03375 0.340474221757739
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.96625 0.454538428556311
+9.03375 0.454538428556311
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:9.1125,0.40997723476223)
+--(axis cs:9.2475,0.40997723476223)
+--(axis cs:9.2475,0.5137896136971)
+--(axis cs:9.1125,0.5137896136971)
+--(axis cs:9.1125,0.40997723476223)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+9.18 0.40997723476223
+9.18 0.342145139761702
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.18 0.5137896136971
+9.18 0.562434113679552
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.14625 0.342145139761702
+9.21375 0.342145139761702
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.14625 0.562434113679552
+9.21375 0.562434113679552
+};
+\path [draw=black, fill=skyblue, semithick]
+(axis cs:9.7525,0.494457394244072)
+--(axis cs:9.8875,0.494457394244072)
+--(axis cs:9.8875,0.534217899579581)
+--(axis cs:9.7525,0.534217899579581)
+--(axis cs:9.7525,0.494457394244072)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+9.82 0.494457394244072
+9.82 0.493679201568164
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.82 0.534217899579581
+9.82 0.552846837511846
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.78625 0.493679201568164
+9.85375 0.493679201568164
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.78625 0.552846837511846
+9.85375 0.552846837511846
+};
+\path [draw=black, fill=lightgreen, semithick]
+(axis cs:9.9325,0.423953091888425)
+--(axis cs:10.0675,0.423953091888425)
+--(axis cs:10.0675,0.506206834455694)
+--(axis cs:9.9325,0.506206834455694)
+--(axis cs:9.9325,0.423953091888425)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+10 0.423953091888425
+10 0.328573501048609
+};
+\addplot [semithick, black, forget plot]
+table {%
+10 0.506206834455694
+10 0.584758668023095
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.96625 0.328573501048609
+10.03375 0.328573501048609
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.96625 0.584758668023095
+10.03375 0.584758668023095
+};
+\path [draw=black, fill=salmon, semithick]
+(axis cs:10.1125,0.504189348141049)
+--(axis cs:10.2475,0.504189348141049)
+--(axis cs:10.2475,0.584725813676547)
+--(axis cs:10.1125,0.584725813676547)
+--(axis cs:10.1125,0.504189348141049)
+--cycle;
+\addplot [semithick, black, forget plot]
+table {%
+10.18 0.504189348141049
+10.18 0.467873219008468
+};
+\addplot [semithick, black, forget plot]
+table {%
+10.18 0.584725813676547
+10.18 0.648573169476602
+};
+\addplot [semithick, black, forget plot]
+table {%
+10.14625 0.467873219008468
+10.21375 0.467873219008468
+};
+\addplot [semithick, black, forget plot]
+table {%
+10.14625 0.648573169476602
+10.21375 0.648573169476602
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+0.82 0.591267391508961
+0.82 0.605461972644741
+1 0.605461972644741
+1 0.591267391508961
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+0.82 0.62911960787104
+0.82 0.64331418900682
+1.18 0.64331418900682
+1.18 0.62911960787104
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+1 0.66697182423312
+1 0.681166405368899
+1.18 0.681166405368899
+1.18 0.66697182423312
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+1.82 0.51284317237968
+1.82 0.52703775351546
+2 0.52703775351546
+2 0.51284317237968
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+1.82 0.550695388741759
+1.82 0.564889969877539
+2.18 0.564889969877539
+2.18 0.550695388741759
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+2 0.588547605103838
+2 0.602742186239618
+2.18 0.602742186239618
+2.18 0.588547605103838
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+2.82 0.651350742255552
+2.82 0.665545323391332
+3 0.665545323391332
+3 0.651350742255552
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+2.82 0.689202958617631
+2.82 0.703397539753411
+3.18 0.703397539753411
+3.18 0.689202958617631
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+3 0.72705517497971
+3 0.74124975611549
+3.18 0.74124975611549
+3.18 0.72705517497971
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+3.82 0.616180668404433
+3.82 0.630375249540213
+4 0.630375249540213
+4 0.616180668404433
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+3.82 0.654032884766512
+3.82 0.668227465902292
+4.18 0.668227465902292
+4.18 0.654032884766512
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+4 0.691885101128591
+4 0.706079682264371
+4.18 0.706079682264371
+4.18 0.691885101128591
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+4.82 0.500551648635411
+4.82 0.514746229771191
+5 0.514746229771191
+5 0.500551648635411
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+4.82 0.53840386499749
+4.82 0.55259844613327
+5.18 0.55259844613327
+5.18 0.53840386499749
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+5 0.57625608135957
+5 0.590450662495349
+5.18 0.590450662495349
+5.18 0.57625608135957
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+5.82 0.616987785835067
+5.82 0.631182366970847
+6 0.631182366970847
+6 0.616987785835067
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+5.82 0.654840002197146
+5.82 0.669034583332926
+6.18 0.669034583332926
+6.18 0.654840002197146
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+6 0.692692218559225
+6 0.706886799695005
+6.18 0.706886799695005
+6.18 0.692692218559225
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+6.82 0.670206635355806
+6.82 0.684401216491586
+7 0.684401216491586
+7 0.670206635355806
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+6.82 0.708058851717885
+6.82 0.722253432853665
+7.18 0.722253432853665
+7.18 0.708058851717885
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+7 0.745911068079964
+7 0.760105649215744
+7.18 0.760105649215744
+7.18 0.745911068079964
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+7.82 0.527784706179636
+7.82 0.541979287315416
+8 0.541979287315416
+8 0.527784706179636
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+7.82 0.565636922541715
+7.82 0.579831503677495
+8.18 0.579831503677495
+8.18 0.565636922541715
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+8 0.603489138903794
+8 0.617683720039574
+8.18 0.617683720039574
+8.18 0.603489138903794
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+8.82 0.586091748905851
+8.82 0.600286330041631
+9 0.600286330041631
+9 0.586091748905851
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+8.82 0.62394396526793
+8.82 0.63813854640371
+9.18 0.63813854640371
+9.18 0.62394396526793
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+9 0.661796181630009
+9 0.675990762765789
+9.18 0.675990762765789
+9.18 0.661796181630009
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+9.82 0.672230804702902
+9.82 0.686425385838682
+10 0.686425385838682
+10 0.672230804702902
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+9.82 0.710083021064981
+9.82 0.724277602200761
+10.18 0.724277602200761
+10.18 0.710083021064981
+};
+\addplot [line width=0.48pt, black, forget plot]
+table {%
+10 0.74793523742706
+10 0.76212981856284
+10.18 0.76212981856284
+10.18 0.74793523742706
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.7525 0.425400918719054
+0.8875 0.425400918719054
+};
+\addplot [semithick, black, forget plot]
+table {%
+0.9325 0.331006206592791
+1.0675 0.331006206592791
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.1125 0.440836063286448
+1.2475 0.440836063286448
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.7525 0.388851446418853
+1.8875 0.388851446418853
+};
+\addplot [semithick, black, forget plot]
+table {%
+1.9325 0.37528099779423
+2.0675 0.37528099779423
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.1125 0.420264053442806
+2.2475 0.420264053442806
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.7525 0.44568908077698
+2.8875 0.44568908077698
+};
+\addplot [semithick, black, forget plot]
+table {%
+2.9325 0.536990360751624
+3.0675 0.536990360751624
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.1125 0.579121162703428
+3.2475 0.579121162703428
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.7525 0.467127069555687
+3.8875 0.467127069555687
+};
+\addplot [semithick, black, forget plot]
+table {%
+3.9325 0.474140587580866
+4.0675 0.474140587580866
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.1125 0.531201701221554
+4.2475 0.531201701221554
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.7525 0.343109951966083
+4.8875 0.343109951966083
+};
+\addplot [semithick, black, forget plot]
+table {%
+4.9325 0.32328817039392
+5.0675 0.32328817039392
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.1125 0.387308317136904
+5.2475 0.387308317136904
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.7525 0.436293032772388
+5.8875 0.436293032772388
+};
+\addplot [semithick, black, forget plot]
+table {%
+5.9325 0.517058947884315
+6.0675 0.517058947884315
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.1125 0.540537160189877
+6.2475 0.540537160189877
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.7525 0.496858820992987
+6.8875 0.496858820992987
+};
+\addplot [semithick, black, forget plot]
+table {%
+6.9325 0.528810866613527
+7.0675 0.528810866613527
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.1125 0.571127025906036
+7.2475 0.571127025906036
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.7525 0.422015754451939
+7.8875 0.422015754451939
+};
+\addplot [semithick, black, forget plot]
+table {%
+7.9325 0.312128282856659
+8.0675 0.312128282856659
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.1125 0.413591265131619
+8.2475 0.413591265131619
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.7525 0.402366736623539
+8.8875 0.402366736623539
+};
+\addplot [semithick, black, forget plot]
+table {%
+8.9325 0.37743132652097
+9.0675 0.37743132652097
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.1125 0.462004538587433
+9.2475 0.462004538587433
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.7525 0.523748855920034
+9.8875 0.523748855920034
+};
+\addplot [semithick, black, forget plot]
+table {%
+9.9325 0.445497731739356
+10.0675 0.445497731739356
+};
+\addplot [semithick, black, forget plot]
+table {%
+10.1125 0.544868960399927
+10.2475 0.544868960399927
+};
+\draw (axis cs:0.91,0.604042514531163) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:1,0.641894730893242) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:1.09,0.679746947255321) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:1.91,0.525618295401882) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:2,0.563470511763961) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:2.09,0.60132272812604) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:2.91,0.664125865277754) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:3,0.701978081639833) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:3.09,0.739830298001912) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries *};
+\draw (axis cs:3.91,0.628955791426635) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:4,0.666808007788714) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:4.09,0.704660224150793) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:4.91,0.513326771657613) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:5,0.551178988019692) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries *};
+\draw (axis cs:5.09,0.589031204381771) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:5.91,0.629762908857269) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:6,0.667615125219348) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:6.09,0.705467341581427) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:6.91,0.682981758378008) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:7,0.720833974740087) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:7.09,0.758686191102166) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries *};
+\draw (axis cs:7.91,0.540559829201838) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:8,0.578412045563917) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:8.09,0.616264261925996) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:8.91,0.598866871928053) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:9,0.636719088290132) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\draw (axis cs:9.09,0.674571304652211) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries *};
+\draw (axis cs:9.91,0.685005927725104) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries n.s.};
+\draw (axis cs:10,0.722858144087183) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries *};
+\draw (axis cs:10.09,0.760710360449262) node[
+  scale=0.45,
+  anchor=south,
+  text=black,
+  rotate=0.0
+]{\bfseries **};
+\ifthenelse{\boolean{NOLEGEND}}{\legend{}}{}
+\end{axis}
+
+\end{tikzpicture}

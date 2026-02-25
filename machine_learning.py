@@ -289,7 +289,7 @@ class TemporalCNN_deep(nn.Module):
             x = conv_block(x)
         x = x.permute(0, 2, 1)  # -> (batch_size, timesteps, channels)
         return self.fc(x)
-
+    
 def calculate_receptive_field(conv_params):
     receptive_field = 1  # Starting with a single element
     for layer in conv_params:
