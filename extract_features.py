@@ -217,7 +217,7 @@ if __name__=="__main__":
         mel = mel.T
         print(f'spectrogram shape (before adjusting): {mel.shape}') 
 
-        expected_frames =  eeg_hga_lfc.shape[0] #  // (eeg_sr_new//100) ## for vocalmind, eeg will have 4 times larger time 
+        expected_frames =  eeg_hga_lfc.shape[0]  
         if S.shape[1] < expected_frames:
             pad = expected_frames - S.shape[1]
             S = np.pad(S, ((0,0),(0,pad)), mode='constant')
