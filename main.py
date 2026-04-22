@@ -1,4 +1,4 @@
-import os, random, sys, pickle 
+import os, random, sys, pickle, tikzplotlib, argparse
 import numpy as np
 import scipy.io.wavfile as wavfile
 from scipy.stats import pearsonr
@@ -18,6 +18,7 @@ from scipy.spatial.distance import euclidean
 from fastdtw import fastdtw
 import librosa, pysptk, pyworld
 from sklearn.decomposition import PCA
+ 
 
 def load_checkpoint(filepath, device):
     assert os.path.isfile(filepath)
@@ -130,11 +131,9 @@ def calculate_speech_perception_metrics(path1, path2):
     mcd, stoi_val = calc_mcd_stoi(y1, y2, sr1)
     return mcd, stoi_val 
 
-import matplotlib.pyplot as plt
-import tikzplotlib, argparse
-
-# run this for evaluation (note the kernel size)
+# example scripts to run this for evaluation (note the kernel size)
 # python /home/ahmed348/TCNN_repo/main.py --T 6 --root_keyword HGA_LFC --model tcnn --kernel_size 15,15,15 --just_evaluate True --speech_only_eval True
+# python /home/ahmed348/TCNN_repo/main.py --T 6 --root_keyword HGA_LFC --kernel_size 7,7,7 --dilations 1,3,5 --causality -1 --just_evaluate True
 
 ## WINNER -> 15,15,15 === 1, 3, 5 --> R.Field size = 1.27 sec
 if __name__=="__main__":

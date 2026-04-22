@@ -227,7 +227,7 @@ class TemporalCNN_deep_vanilla(nn.Module):
         return self.fc(x)
 
 class TemporalCNN_deep(nn.Module):
-    def __init__(self, input_channels=127, output_size=80, kernel_size = [15,15,15], dilations=[5,7,9], first_layer_ch=128, causality=0):
+    def __init__(self, input_channels=127, output_size=80, kernel_size = [15,15,15], dilations=[1,3,5], first_layer_ch=128, causality=0):
         super(TemporalCNN_deep, self).__init__()
         # Default convolutional parameters if none are provided
         conv_params = [

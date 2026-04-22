@@ -1,33 +1,33 @@
-% Tue Feb 24 11:21:01 2026
+% Wed Mar 18 02:38:51 2026
 % This file was created with matplot2tikz v0.5.3.
 \begin{tikzpicture}
 \provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
+	\pgfplotsset{every axis post/.append style={title = {} }}%
+}{}%
+\providecommand{\thisXlabelopacity}{1.0}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
+}{}%
+\providecommand{\thisYlabelopacity}{1.0}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
 	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
+}{}%
+\providecommand{\figwidth}{360pt}%
+\providecommand{\figheight}{310pt}%
+\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
 }{}%
 \provideboolean{CLEARXLABEL}\ifthenelse{\boolean{CLEARXLABEL}}{%
 	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
-\providecommand{\thisXlabelopacity}{1.0}%
-\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
-	\pgfplotsset{every axis post/.append style={title = {} }}%
-}{}%
 \provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
 	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
-}{}%
-\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
-	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
-}{}%
-\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
-	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
 \pgfplotsset{compat=1.18}%
-\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
-	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
-}{}%
 \provideboolean{NOLEGEND}%
-\providecommand{\figheight}{310pt}%
-\providecommand{\thisYlabelopacity}{1.0}%
-\providecommand{\figwidth}{360pt}%
 
 \definecolor{darkgray176}{RGB}{176,176,176}
 \definecolor{lightgray204}{RGB}{204,204,204}
@@ -52,7 +52,7 @@ xmajorgrids,
 xmin=0.32, xmax=10.68,
 xtick style={color=black},
 xtick={1,2,3,4,5,6,7,8,9,10},
-xticklabels={sub-1,sub-2,sub-3,sub-4,sub-5,sub-6,sub-7,sub-8,sub-9,sub-10},
+xticklabels={P1,P2,P3,P4,P5,P6,P7,P8,P9,P10},
 y grid style={darkgray176},
 ylabel={STOI},
 ymajorgrids,

@@ -1,33 +1,33 @@
-% Tue Feb 24 12:40:26 2026
+% Wed Mar 18 02:34:01 2026
 % This file was created with matplot2tikz v0.5.3.
 \begin{tikzpicture}
 \provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
+}{}%
+\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
+	\pgfplotsset{every axis post/.append style={title = {} }}%
+}{}%
+\providecommand{\thisXlabelopacity}{1.0}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
+}{}%
+\providecommand{\thisYlabelopacity}{1.0}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
 	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
+}{}%
+\providecommand{\figwidth}{360pt}%
+\providecommand{\figheight}{310pt}%
+\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
+	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
 }{}%
 \provideboolean{CLEARXLABEL}\ifthenelse{\boolean{CLEARXLABEL}}{%
 	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
-\providecommand{\thisXlabelopacity}{1.0}%
-\provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
-	\pgfplotsset{every axis post/.append style={title = {} }}%
-}{}%
 \provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
 	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
-}{}%
-\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
-	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
-}{}%
-\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
-	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
 \pgfplotsset{compat=1.18}%
-\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
-	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
-}{}%
 \provideboolean{NOLEGEND}%
-\providecommand{\figheight}{310pt}%
-\providecommand{\thisYlabelopacity}{1.0}%
-\providecommand{\figwidth}{360pt}%
 
 \definecolor{crimson2143940}{RGB}{214,39,40}
 \definecolor{darkgray176}{RGB}{176,176,176}
@@ -78,7 +78,7 @@ table {%
 1.83 0.44780924414353
 2.11 0.441629448772061
 };
-\addlegendentry{sub-1}
+\addlegendentry{P1}
 \addplot [thick, darkorange25512714, mark=square*, mark size=3, mark options={solid}]
 table {%
 0.45 0.386537141104223
@@ -88,7 +88,7 @@ table {%
 1.83 0.408487673420726
 2.11 0.438057877203821
 };
-\addlegendentry{sub-2}
+\addlegendentry{P2}
 \addplot [thick, forestgreen4416044, mark=triangle*, mark size=3, mark options={solid}]
 table {%
 0.45 0.551149880214407
@@ -98,7 +98,7 @@ table {%
 1.83 0.553719727153379
 2.11 0.559601287414263
 };
-\addlegendentry{sub-3}
+\addlegendentry{P3}
 \addplot [thick, crimson2143940, mark=triangle*, mark size=3, mark options={solid,rotate=180}]
 table {%
 0.45 0.516830991573071
@@ -108,7 +108,7 @@ table {%
 1.83 0.512568293961496
 2.11 0.531055901096871
 };
-\addlegendentry{sub-4}
+\addlegendentry{P4}
 \addplot [thick, mediumpurple148103189, mark=diamond*, mark size=3, mark options={solid}]
 table {%
 0.45 0.362290655668977
@@ -118,7 +118,7 @@ table {%
 1.83 0.384017700748374
 2.11 0.390318332173771
 };
-\addlegendentry{sub-5}
+\addlegendentry{P5}
 \addplot [thick, sienna1408675, mark=triangle*, mark size=3, mark options={solid,rotate=270}]
 table {%
 0.45 0.518102559815183
@@ -128,7 +128,7 @@ table {%
 1.83 0.501581409235604
 2.11 0.515350743971333
 };
-\addlegendentry{sub-6}
+\addlegendentry{P6}
 \addplot [thick, orchid227119194, mark=triangle*, mark size=3, mark options={solid,rotate=90}]
 table {%
 0.45 0.541622525616524
@@ -138,7 +138,7 @@ table {%
 1.83 0.541797780366501
 2.11 0.548344365855578
 };
-\addlegendentry{sub-7}
+\addlegendentry{P7}
 \addplot [thick, gray127, mark=pentagon*, mark size=3, mark options={solid}]
 table {%
 0.45 0.37000755887263
@@ -148,7 +148,7 @@ table {%
 1.83 0.427796104386116
 2.11 0.441265243167672
 };
-\addlegendentry{sub-8}
+\addlegendentry{P8}
 \addplot [thick, goldenrod18818934, mark=star, mark size=3, mark options={solid}]
 table {%
 0.45 0.386273968979263
@@ -158,7 +158,7 @@ table {%
 1.83 0.453427804154842
 2.11 0.457467299040477
 };
-\addlegendentry{sub-9}
+\addlegendentry{P9}
 \addplot [thick, darkturquoise23190207, mark=x, mark size=3, mark options={solid}]
 table {%
 0.45 0.527297980248098
@@ -168,7 +168,7 @@ table {%
 1.83 0.534669227664893
 2.11 0.540095161595079
 };
-\addlegendentry{sub-10}
+\addlegendentry{P10}
 \ifthenelse{\boolean{NOLEGEND}}{\legend{}}{}
 \end{axis}
 

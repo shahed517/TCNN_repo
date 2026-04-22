@@ -1,33 +1,33 @@
-% Tue Feb 24 15:18:34 2026
+% Mon Mar 30 17:44:08 2026
 % This file was created with matplot2tikz v0.5.3.
 \begin{tikzpicture}
-\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
 	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
 }{}%
-\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
-	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
-}{}%
-\providecommand{\figheight}{310pt}%
-\providecommand{\thisXlabelopacity}{1.0}%
-\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
-	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
-}{}%
-\provideboolean{NOLEGEND}%
-\providecommand{\figwidth}{360pt}%
 \provideboolean{CLEANTITLE}\ifthenelse{\boolean{CLEANTITLE}}{%
 	\pgfplotsset{every axis post/.append style={title = {} }}%
 }{}%
-\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+\providecommand{\thisYlabelopacity}{1.0}%
+\providecommand{\thisXlabelopacity}{1.0}%
+\provideboolean{CLEARYLABEL}\ifthenelse{\boolean{CLEARYLABEL}}{%
 	\pgfplotsset{every axis post/.append style={ylabel = {} }}%
 }{}%
 \provideboolean{CLEARXLABEL}\ifthenelse{\boolean{CLEARXLABEL}}{%
 	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
-\pgfplotsset{compat=1.18}%
+\provideboolean{CLEANYAXIS}\ifthenelse{\boolean{CLEANYAXIS}}{%
+	\pgfplotsset{every axis post/.append style={yticklabels = {} }}%
+}{}%
+\providecommand{\figheight}{310pt}%
+\providecommand{\figwidth}{360pt}%
 \provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
 	\pgfplotsset{every axis post/.append style={xlabel = {} }}%
 }{}%
-\providecommand{\thisYlabelopacity}{1.0}%
+\pgfplotsset{compat=1.18}%
+\provideboolean{CLEANXAXIS}\ifthenelse{\boolean{CLEANXAXIS}}{%
+	\pgfplotsset{every axis post/.append style={xticklabels = {} }}%
+}{}%
+\provideboolean{NOLEGEND}%
 
 \definecolor{darkgray176}{RGB}{176,176,176}
 
@@ -35,73 +35,103 @@
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-01},
+title={P1},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
-  ctx\_lh\_G\_and\_S\_subcentral,
   ctx\_lh\_S\_central,
+  ctx\_lh\_G\_and\_S\_subcentral,
   Right-Cerebral-White-Matter,
   ctx\_lh\_S\_central,
   ctx\_rh\_G\_and\_S\_occipital\_inf,
   Left-Cerebral-White-Matter,
   ctx\_rh\_S\_occipital\_ant,
   Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_S\_occipital\_ant,
+  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
   ctx\_lh\_G\_and\_S\_subcentral,
   Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_circular\_insula\_sup,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_occipital\_ant,
   ctx\_rh\_S\_occipital\_ant,
-  Right-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
-  ctx\_rh\_S\_occipital\_ant,
-  Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
   ctx\_lh\_S\_circular\_insula\_sup,
   Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_temporal\_sup,
   ctx\_lh\_G\_and\_S\_occipital\_inf,
+  Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_S\_precentral-inf-part,
+  ctx\_lh\_G\_pariet\_inf-Supramar,
   ctx\_lh\_S\_circular\_insula\_sup,
   Left-Cerebral-White-Matter,
-  ctx\_lh\_S\_central
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_central,
+  ctx\_lh\_S\_circular\_insula\_sup,
+  ctx\_lh\_G\_and\_S\_occipital\_inf,
+  ctx\_lh\_G\_temporal\_inf,
+  Left-Cerebral-White-Matter
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.021395084168762,
+ymin=0, ymax=0.0347237873822451,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=red] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0203762706369162);
-\draw[draw=black,fill=red] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0198517199605703);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0162463989108801);
-\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0155581152066588);
-\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0130421333014965);
-\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0123831732198596);
-\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0115027446299791);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0104058785364032);
-\draw[draw=black,fill=red] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0102111026644707);
-\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00983323063701391);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00957969482988119);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00937395170331001);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00895251333713531);
-\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00861423555761576);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00860509648919106);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00805801339447498);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00801952742040157);
-\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00791254546493292);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00757210282608867);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00744734006002545);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00731847994029522);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00730085978284478);
-\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00728353392332792);
-\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00727991294115782);
-\draw[draw=black,fill=red] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00716152274981141);
+\draw[draw=black,fill=red] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0330702736973763);
+\draw[draw=black,fill=red] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0305759590119123);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0250475145876408);
+\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0210951659828424);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0168165396898985);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0164276845753193);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0159222707152367);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.014554682187736);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0136692896485329);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0122776189818978);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0119225578382611);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0119008235633373);
+\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0116521874442697);
+\draw[draw=black,fill=red] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0109632192179561);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0107658980414271);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0103413900360465);
+\draw[draw=black,fill=red] (axis cs:15.6,0) rectangle (axis cs:16.4,0.0102110579609871);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0101137487217784);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00939826667308807);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00831940956413746);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00826689135283232);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00798637606203556);
+\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00784877128899097);
+\draw[draw=black,fill=red] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00721156457439065);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00679157534614205);
+\draw[draw=black,fill=blue] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00665456242859364);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00664956076070666);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00663372315466404);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00653813872486353);
+\draw[draw=black,fill=red] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00645446544513106);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00642140163108706);
+\draw[draw=black,fill=red] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00641838228330016);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00630420818924904);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00617845030501485);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00617437297478318);
+\draw[draw=black,fill=red] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00601007556542754);
+\draw[draw=black,fill=red] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00600785622373223);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00585359614342451);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00571733899414539);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00563661893829703);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -112,73 +142,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-02},
+title={P2},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
   ctx\_lh\_G\_temporal\_inf,
   Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Left-Inf-Lat-Vent,
+  Left-Cerebral-White-Matter,
   ctx\_rh\_G\_pariet\_inf-Angular,
+  Right-Hippocampus,
+  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Inf-Lat-Vent,
   Left-Cerebral-White-Matter,
-  Left-Inf-Lat-Vent,
-  Right-Cerebral-White-Matter,
   Left-Lateral-Ventricle,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  WM-hypointensities,
+  Left-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
-  Right-Hippocampus,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
-  Right-Hippocampus,
-  Left-Cerebral-White-Matter,
   ctx\_lh\_S\_temporal\_inf,
-  WM-hypointensities
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Right-Hippocampus,
+  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-choroid-plexus,
+  Left-Cerebral-White-Matter
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0114958161022514,
+ymin=0, ymax=0.0152695678174496,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0109483962878585);
-\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.00952421873807907);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.00938686449080706);
-\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.00893313251435757);
-\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.00855319015681744);
-\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.00851243454962969);
-\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.00833497382700443);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.00825322326272726);
-\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00795998610556126);
-\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00774713419377804);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00761069823056459);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0072476202622056);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0071722692809999);
-\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00703778117895126);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00701724225655198);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00701656006276608);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00686668185517192);
-\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0068039046600461);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00678955623880029);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0066748009994626);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00660127028822899);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00656678574159741);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00655153719708323);
-\draw[draw=black,fill=blue] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00648348266258836);
-\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0064568086527288);
+\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0145424455404282);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0127736618742347);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0121955731883645);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0117634357884526);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0105148581787944);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0100247394293547);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.00950416177511215);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0093576954677701);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00884117186069489);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00877376645803452);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00826935470104218);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0082464562729001);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00808774679899216);
+\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00796562246978283);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00785141810774803);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00784046482294798);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00783625710755587);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00772399362176657);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00767798675224185);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00767032848671079);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00755431735888124);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00755295669659972);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00743610272184014);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00719002494588494);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00712776882573962);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00696752360090613);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00690445862710476);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00689690141007304);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00682487571612);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00678296945989132);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00677069183439016);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00668044062331319);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00645111175253987);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00641108443960547);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00633800216019154);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00631770025938749);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00622505461797118);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00618647504597902);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00612474232912064);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00608173571527004);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -189,73 +249,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-03},
+title={P3},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   ctx\_rh\_S\_circular\_insula\_inf,
   Right-Cerebral-White-Matter,
   ctx\_rh\_S\_circular\_insula\_inf,
   ctx\_lh\_G\_temporal\_middle,
+  Right-Cerebral-White-Matter,
   ctx\_rh\_G\_pariet\_inf-Supramar,
-  Right-Cerebral-White-Matter,
-  ctx\_rh\_S\_temporal\_sup,
-  ctx\_rh\_G\_temp\_sup-Plan\_polar,
-  ctx\_lh\_G\_oc-temp\_lat-fusifor,
   ctx\_rh\_G\_front\_inf-Opercular,
+  ctx\_lh\_G\_oc-temp\_lat-fusifor,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_front\_inf-Opercular,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_temp\_sup-Plan\_polar,
+  ctx\_rh\_S\_temporal\_sup,
+  ctx\_lh\_G\_oc-temp\_lat-fusifor,
+  Right-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_G\_oc-temp\_lat-fusifor,
   ctx\_rh\_G\_temporal\_inf,
-  Right-Cerebral-White-Matter,
   ctx\_rh\_S\_oc-temp\_lat,
-  ctx\_lh\_G\_oc-temp\_lat-fusifor,
+  Left-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_G\_Ins\_lg\_and\_S\_cent\_ins,
   Right-Hippocampus,
-  ctx\_rh\_S\_oc-temp\_lat,
   ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
-  Right-Cerebral-White-Matter,
   ctx\_rh\_S\_oc-temp\_lat,
+  Right-Cerebral-White-Matter,
   ctx\_lh\_G\_oc-temp\_lat-fusifor,
+  ctx\_rh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_S\_oc-temp\_lat,
+  Right-Cerebral-White-Matter,
   ctx\_lh\_S\_circular\_insula\_sup,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_G\_oc-temp\_lat-fusifor,
+  Right-Hippocampus,
+  ctx\_rh\_G\_front\_inf-Opercular,
+  Left-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
-  ctx\_lh\_G\_oc-temp\_lat-fusifor
+  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
+  Right-Hippocampus
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0261708579026163,
+ymin=0, ymax=0.0686771940439939,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0249246265739202);
-\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0107625871896744);
-\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.00950060877948999);
-\draw[draw=black,fill=blue] (axis cs:2.6,0) rectangle (axis cs:3.4,0.00942947342991829);
-\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0090367840602994);
-\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.00897445902228355);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.00806842185556889);
-\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.00797720905393362);
-\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00772634614259005);
-\draw[draw=black,fill=red] (axis cs:8.6,0) rectangle (axis cs:9.4,0.007358284201473);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00735125411301851);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0073087583296001);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00705669168382883);
-\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0070253936573863);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00671697547659278);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00661725364625454);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00644672755151987);
-\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00640334282070398);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00638633919879794);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00636656628921628);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00635297875851393);
-\draw[draw=black,fill=blue] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00635290890932083);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00633096555247903);
-\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0063255550339818);
-\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00626287283375859);
+\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0654068514704704);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0231584254652262);
+\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0171281546354294);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0166812781244516);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0147965857759118);
+\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0146162677556276);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0135196465998888);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0127928033471107);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0126003166660666);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0124964201822877);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.012059161439538);
+\draw[draw=black,fill=blue] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0119589986279607);
+\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0115298107266426);
+\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0111286956816912);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0110813388600945);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0100759398192167);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00981464702636003);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00960874930024147);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00946120824664831);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00899150595068932);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.0086989114060998);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00838818214833736);
+\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00820862501859665);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00797754991799593);
+\draw[draw=black,fill=blue] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00797706097364426);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00786997471004725);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00782872643321753);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00779700372368097);
+\draw[draw=black,fill=blue] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00748623022809625);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00724385306239128);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00714144995436072);
+\draw[draw=black,fill=red] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00653986027464271);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00615729996934533);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00611616158857942);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00605327310040593);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00595977250486612);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.0057745217345655);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00566456327214837);
+\draw[draw=black,fill=blue] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00564644252881408);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00562140205875039);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -266,73 +356,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-04},
+title={P4},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
+  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
+  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
   ctx\_rh\_G\_temp\_sup-Plan\_tempo,
-  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
   Right-Cerebral-White-Matter,
+  ctx\_rh\_Lat\_Fis-post,
+  ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_S\_central,
-  ctx\_rh\_Lat\_Fis-post,
-  ctx\_rh\_G\_Ins\_lg\_and\_S\_cent\_ins,
-  ctx\_rh\_Lat\_Fis-post,
-  ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_S\_temporal\_sup,
   ctx\_rh\_G\_temporal\_middle,
-  ctx\_rh\_S\_central,
-  ctx\_rh\_S\_temporal\_sup,
+  ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_S\_temporal\_sup,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_S\_central,
+  Right-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
   ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_S\_circular\_insula\_inf,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
   ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_Lat\_Fis-post,
-  Right-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
+  ctx\_rh\_Lat\_Fis-post,
   ctx\_rh\_Lat\_Fis-ant-Horizont,
   ctx\_rh\_Lat\_Fis-post,
-  ctx\_rh\_G\_pariet\_inf-Supramar
+  ctx\_rh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_G\_front\_inf-Opercular,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_Lat\_Fis-post,
+  ctx\_rh\_S\_circular\_insula\_inf,
+  ctx\_rh\_G\_pariet\_inf-Supramar,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
+  ctx\_rh\_S\_precentral-sup-part,
+  ctx\_rh\_S\_circular\_insula\_sup,
+  ctx\_rh\_G\_temporal\_middle,
+  ctx\_rh\_Lat\_Fis-post,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0146914390381426,
+ymin=0, ymax=0.0198187080211937,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0139918467029929);
-\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0133318435400724);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.012702708132565);
-\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0122497454285622);
-\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0120429005473852);
-\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0120354248210788);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0120215080678463);
-\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0117485830560327);
-\draw[draw=black,fill=blue] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0111762238666415);
-\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0107793649658561);
-\draw[draw=black,fill=red] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0106287244707346);
-\draw[draw=black,fill=blue] (axis cs:10.6,0) rectangle (axis cs:11.4,0.010219638235867);
-\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0101406844332814);
-\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00956327840685844);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00941792316734791);
-\draw[draw=black,fill=blue] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00846128724515438);
-\draw[draw=black,fill=blue] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00838151481002569);
-\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00829941779375076);
-\draw[draw=black,fill=blue] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00798305589705706);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00791236571967602);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00778823252767324);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0074962368234992);
-\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00731620099395514);
-\draw[draw=black,fill=blue] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00726585276424885);
-\draw[draw=black,fill=blue] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00718179950490594);
+\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0188749600201845);
+\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0186919011175632);
+\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0185748301446438);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0157226789742708);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0155414193868637);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0152807040140033);
+\draw[draw=black,fill=red] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0150729985907674);
+\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0149895651265979);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0145635046064854);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0144912162795663);
+\draw[draw=black,fill=blue] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0139575004577637);
+\draw[draw=black,fill=blue] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0125352442264557);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0122509114444256);
+\draw[draw=black,fill=red] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0118040684610605);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0115388864651322);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0111178597435355);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.010238260962069);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00969966035336256);
+\draw[draw=black,fill=blue] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00961955077946186);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00958950258791447);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00869232416152954);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00867817923426628);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00842427089810371);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00822037365287542);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00795332994312048);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00760053470730782);
+\draw[draw=black,fill=blue] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00744039518758655);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00729353306815028);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00699459901079535);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00697555486112833);
+\draw[draw=black,fill=blue] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00696390075609088);
+\draw[draw=black,fill=blue] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00684657320380211);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00663410546258092);
+\draw[draw=black,fill=blue] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00661843596026301);
+\draw[draw=black,fill=red] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00659706676378846);
+\draw[draw=black,fill=red] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00632079131901264);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00629693083465099);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00620647752657533);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00614505633711815);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.006093664560467);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -343,73 +463,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-05},
+title={P5},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   ctx\_lh\_G\_temp\_sup-Lateral,
   ctx\_lh\_G\_temp\_sup-Lateral,
   ctx\_rh\_S\_temporal\_sup,
   ctx\_rh\_G\_temporal\_middle,
+  ctx\_rh\_S\_temporal\_sup,
   ctx\_rh\_G\_temporal\_middle,
   ctx\_rh\_S\_temporal\_sup,
+  ctx\_lh\_G\_temp\_sup-Lateral,
   ctx\_rh\_S\_temporal\_sup,
+  ctx\_lh\_G\_temp\_sup-Lateral,
   Left-Cerebral-White-Matter,
-  ctx\_rh\_S\_temporal\_sup,
   Right-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
   Right-Inf-Lat-Vent,
-  ctx\_lh\_G\_temp\_sup-Lateral,
-  ctx\_lh\_G\_temp\_sup-Lateral,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_S\_temporal\_sup,
   Right-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
   ctx\_rh\_S\_temporal\_sup,
   Left-Cerebral-White-Matter,
-  Right-Cerebral-White-Matter,
+  Right-Hippocampus,
+  ctx\_rh\_S\_temporal\_sup,
   ctx\_rh\_S\_temporal\_sup,
   Right-Hippocampus,
-  Right-Hippocampus,
-  ctx\_lh\_S\_temporal\_sup,
   Right-Cerebral-White-Matter,
-  ctx\_rh\_S\_temporal\_sup
+  ctx\_rh\_S\_temporal\_sup,
+  Left-Hippocampus,
+  Left-Hippocampus,
+  Right-Hippocampus,
+  Right-Inf-Lat-Vent,
+  ctx\_rh\_G\_temporal\_middle,
+  Right-Hippocampus,
+  ctx\_rh\_G\_temporal\_middle,
+  Right-choroid-plexus,
+  Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Right-Hippocampus,
+  ctx\_rh\_S\_temporal\_sup,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_G\_temporal\_middle
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0336858602240682,
+ymin=0, ymax=0.0783622350543737,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0320817716419697);
-\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0247780866920948);
-\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0213159620761871);
-\draw[draw=black,fill=blue] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0195575878024101);
-\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0182297993451357);
-\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0176174622029066);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0165171660482883);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0163561459630728);
-\draw[draw=black,fill=blue] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0159829370677471);
-\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0153410909697413);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0147982314229012);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0146557539701462);
-\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0145998997613788);
-\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.014458304271102);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0137648517265916);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.013277824036777);
-\draw[draw=black,fill=blue] (axis cs:15.6,0) rectangle (axis cs:16.4,0.0132450684905052);
-\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0119671793654561);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.0116137815639377);
-\draw[draw=black,fill=blue] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0112976878881454);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.0111592011526227);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0110984016209841);
-\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0109248571097851);
-\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0102958558127284);
-\draw[draw=black,fill=blue] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0102765122428536);
+\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0746307000517845);
+\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0518975332379341);
+\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0453086718916893);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0420516729354858);
+\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0346244834363461);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0332384742796421);
+\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0304301232099533);
+\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0278636142611504);
+\draw[draw=black,fill=blue] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0266318190842867);
+\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0263925362378359);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0253022722899914);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0251443944871426);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0233118869364262);
+\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.022469324991107);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0223188437521458);
+\draw[draw=black,fill=blue] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0142792873084545);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.0136154424399137);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0133139416575432);
+\draw[draw=black,fill=blue] (axis cs:17.6,0) rectangle (axis cs:18.4,0.0133042354136705);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0127430856227875);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.012404945679009);
+\draw[draw=black,fill=blue] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0120161548256874);
+\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0113231297582388);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0109810493886471);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0106239365413785);
+\draw[draw=black,fill=blue] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00915026944130659);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00907049607485533);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00808290857821703);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00692248530685902);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00670667458325624);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00661486154422164);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00660653226077557);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00654459837824106);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00646367343142629);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00642812950536609);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00618719216436148);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00603325478732586);
+\draw[draw=black,fill=blue] (axis cs:36.6,0) rectangle (axis cs:37.4,0.0059839216992259);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00563730672001839);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00543230725452304);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -420,73 +570,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-06},
+title={P6},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   ctx\_lh\_G\_temp\_sup-G\_T\_transv,
   ctx\_rh\_S\_circular\_insula\_inf,
   ctx\_rh\_S\_circular\_insula\_inf,
+  ctx\_rh\_S\_circular\_insula\_inf,
   Left-Cerebral-White-Matter,
+  ctx\_rh\_S\_circular\_insula\_inf,
   ctx\_rh\_G\_and\_S\_subcentral,
+  ctx\_rh\_S\_circular\_insula\_inf,
+  Left-Cerebral-White-Matter,
+  ctx\_rh\_G\_temp\_sup-G\_T\_transv,
+  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
+  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
+  ctx\_rh\_G\_and\_S\_subcentral,
+  ctx\_rh\_S\_circular\_insula\_inf,
+  ctx\_lh\_G\_and\_S\_subcentral,
+  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
   ctx\_rh\_G\_temp\_sup-G\_T\_transv,
   ctx\_rh\_S\_circular\_insula\_inf,
-  Left-Cerebral-White-Matter,
-  ctx\_rh\_S\_circular\_insula\_inf,
-  ctx\_rh\_S\_circular\_insula\_inf,
-  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
   ctx\_rh\_G\_and\_S\_subcentral,
-  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
   ctx\_rh\_G\_temp\_sup-Lateral,
-  ctx\_rh\_S\_circular\_insula\_inf,
   ctx\_rh\_G\_front\_inf-Opercular,
   ctx\_lh\_G\_and\_S\_subcentral,
   ctx\_rh\_S\_circular\_insula\_inf,
-  ctx\_rh\_G\_temp\_sup-G\_T\_transv,
-  ctx\_lh\_G\_and\_S\_subcentral,
-  ctx\_lh\_G\_temp\_sup-G\_T\_transv,
-  ctx\_rh\_G\_and\_S\_subcentral,
+  Right-Cerebral-White-Matter,
+  ctx\_lh\_Lat\_Fis-post,
   ctx\_rh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_G\_front\_inf-Opercular,
+  ctx\_rh\_G\_temp\_sup-Plan\_polar,
+  ctx\_rh\_G\_and\_S\_subcentral,
+  ctx\_lh\_G\_pariet\_inf-Supramar,
+  ctx\_rh\_G\_pariet\_inf-Supramar,
+  Left-Cerebral-White-Matter,
   ctx\_rh\_S\_circular\_insula\_inf,
-  ctx\_rh\_S\_circular\_insula\_inf
+  ctx\_lh\_S\_temporal\_sup,
+  ctx\_lh\_G\_and\_S\_subcentral,
+  ctx\_rh\_S\_circular\_insula\_inf,
+  ctx\_lh\_Lat\_Fis-post,
+  ctx\_rh\_Lat\_Fis-post,
+  ctx\_lh\_Lat\_Fis-post
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0240189512260258,
+ymin=0, ymax=0.0916932206600904,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0228751916438341);
-\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0194721557199955);
-\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0186337977647781);
-\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0154897384345531);
-\draw[draw=black,fill=red] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0117218950763345);
-\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0113259851932526);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0107627166435122);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0104108722880483);
-\draw[draw=black,fill=blue] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00998848676681519);
-\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0099118622019887);
-\draw[draw=black,fill=blue] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00916894990950823);
-\draw[draw=black,fill=red] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00878960825502872);
-\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00828964728862047);
-\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00797025393694639);
-\draw[draw=black,fill=blue] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00795574299991131);
-\draw[draw=black,fill=red] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00793264899402857);
-\draw[draw=black,fill=red] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00785346888005733);
-\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00782915018498898);
-\draw[draw=black,fill=blue] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00766048161312938);
-\draw[draw=black,fill=red] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00758379558101296);
-\draw[draw=black,fill=blue] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00748535897582769);
-\draw[draw=black,fill=red] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00734147196635604);
-\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00732459221035242);
-\draw[draw=black,fill=blue] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00699725281447172);
-\draw[draw=black,fill=blue] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00695652980357409);
+\draw[draw=black,fill=blue] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0873268768191338);
+\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0710562169551849);
+\draw[draw=black,fill=blue] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0691495686769485);
+\draw[draw=black,fill=blue] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0514761209487915);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0446884520351887);
+\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0390701591968536);
+\draw[draw=black,fill=red] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0347187593579292);
+\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0313638299703598);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0311865974217653);
+\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0301405023783445);
+\draw[draw=black,fill=blue] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0213533937931061);
+\draw[draw=black,fill=blue] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0207798480987549);
+\draw[draw=black,fill=red] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0189307983964682);
+\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0189283937215805);
+\draw[draw=black,fill=red] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0173915736377239);
+\draw[draw=black,fill=blue] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0150527618825436);
+\draw[draw=black,fill=blue] (axis cs:15.6,0) rectangle (axis cs:16.4,0.014959279447794);
+\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0146993631497025);
+\draw[draw=black,fill=red] (axis cs:17.6,0) rectangle (axis cs:18.4,0.0142672127112746);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0140746757388115);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.0128763439133763);
+\draw[draw=black,fill=red] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0116569986566901);
+\draw[draw=black,fill=blue] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0115985292941332);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0115524996072054);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0115245543420315);
+\draw[draw=black,fill=blue] (axis cs:24.6,0) rectangle (axis cs:25.4,0.0112695433199406);
+\draw[draw=black,fill=blue] (axis cs:25.6,0) rectangle (axis cs:26.4,0.0106162754818797);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.0102975917980075);
+\draw[draw=black,fill=blue] (axis cs:27.6,0) rectangle (axis cs:28.4,0.0100313751026988);
+\draw[draw=black,fill=red] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00945225730538368);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00938131380826235);
+\draw[draw=black,fill=blue] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00928001012653112);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00926341023296118);
+\draw[draw=black,fill=blue] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00904089398682117);
+\draw[draw=black,fill=blue] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00879697035998106);
+\draw[draw=black,fill=red] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00857663247734308);
+\draw[draw=black,fill=blue] (axis cs:35.6,0) rectangle (axis cs:36.4,0.0084266010671854);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00771650904789567);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00761513691395521);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00754680205136538);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -497,73 +677,103 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-07},
+title={P7},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   ctx\_lh\_S\_temporal\_transverse,
-  ctx\_lh\_S\_temporal\_transverse,
   ctx\_lh\_G\_pariet\_inf-Supramar,
   ctx\_lh\_S\_temporal\_transverse,
-  ctx\_lh\_G\_temp\_sup-Plan\_tempo,
+  ctx\_lh\_S\_temporal\_transverse,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   ctx\_lh\_G\_temp\_sup-Plan\_tempo,
+  ctx\_lh\_G\_temp\_sup-Plan\_tempo,
+  ctx\_lh\_G\_temp\_sup-Lateral,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   ctx\_lh\_G\_pariet\_inf-Angular,
+  ctx\_lh\_S\_orbital\_med-olfact,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
-  ctx\_lh\_G\_temp\_sup-Lateral,
-  ctx\_lh\_G\_pariet\_inf-Supramar,
   Left-Cerebral-White-Matter,
   Right-Cerebral-White-Matter,
-  ctx\_lh\_S\_orbital\_med-olfact,
+  Left-Cerebral-White-Matter,
   Left-Inf-Lat-Vent,
+  ctx\_lh\_G\_pariet\_inf-Supramar,
+  ctx\_lh\_S\_oc-temp\_lat,
+  Left-Hippocampus,
+  ctx\_lh\_G\_parietal\_sup,
+  Left-Inf-Lat-Vent,
+  Right-Amygdala,
+  Right-Amygdala,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_oc-temp\_med\_and\_Lingual,
+  ctx\_lh\_S\_temporal\_sup,
   ctx\_lh\_S\_temporal\_transverse,
-  Left-Cerebral-White-Matter
+  Left-Amygdala,
+  Left-Hippocampus,
+  Left-Amygdala,
+  Left-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0176589391194284,
+ymin=0, ymax=0.0202231510542333,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0168180372565985);
-\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0147800073027611);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0138933807611465);
-\draw[draw=black,fill=blue] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0116482665762305);
-\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0113730458542705);
-\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0113315572962165);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0108224721625447);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0105027677491307);
-\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00978315621614456);
-\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00974387489259243);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0090511180460453);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00863482709974051);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00854204036295414);
-\draw[draw=black,fill=red] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00842254981398582);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00840815994888544);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00804299581795931);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00735408905893564);
-\draw[draw=black,fill=blue] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00732206599786878);
-\draw[draw=black,fill=blue] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00722122332081199);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00721133034676313);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00718643376603723);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00713473930954933);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00712604913860559);
-\draw[draw=black,fill=blue] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00673687970265746);
-\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0067165344953537);
+\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0192601438611746);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0169007312506437);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0159193370491266);
+\draw[draw=black,fill=blue] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0140812732279301);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0121501171961427);
+\draw[draw=black,fill=blue] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0120714092627168);
+\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0113707445561886);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0107768615707755);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0104098524898291);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00991155672818422);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00985643919557333);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00980075262486935);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00974658690392971);
+\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00911989435553551);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00895721837878227);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0086637744680047);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00833901390433311);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00794603675603867);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00794414523988962);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00766566814854741);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00765600521117449);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00755957374349236);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0074899485334754);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00701279006898403);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00689047621563077);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00646288832649589);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00629206467419863);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00609900755807757);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00609019305557013);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00608002906665206);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00598947750404477);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00581290945410728);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00572804361581802);
+\draw[draw=black,fill=blue] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00571920489892364);
+\draw[draw=black,fill=blue] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00571590242907405);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00558358291164041);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00557590462267399);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00557529414072633);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00544168567284942);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00542396027594805);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -574,17 +784,14 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-08},
+title={P8},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   ctx\_lh\_S\_oc\_sup\_and\_transversal,
-  Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
@@ -595,12 +802,30 @@ xticklabels={
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
-  ctx\_lh\_S\_oc\_sup\_and\_transversal,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   ctx\_lh\_S\_oc\_sup\_and\_transversal,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
-  ctx\_lh\_G\_pariet\_inf-Angular,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_oc\_sup\_and\_transversal,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_oc\_sup\_and\_transversal,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
@@ -609,38 +834,53 @@ xticklabels={
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0259067399427295,
+ymin=0, ymax=0.0358347041532397,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0246730856597424);
-\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0203816629946232);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0177077203989029);
-\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0156789049506187);
-\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0147790014743805);
-\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0143183628097177);
-\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.01430509891361);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.013539089821279);
-\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0134446229785681);
-\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0130523825064301);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0126287676393986);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0126165663823485);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0125167230144143);
-\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0125037599354982);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0124528296291828);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0124131124466658);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.011871475726366);
-\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0117453495040536);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.0116515466943383);
-\draw[draw=black,fill=red] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0116324834525585);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.0115399193018675);
-\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0113736111670732);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0112676937133074);
-\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0112532638013363);
-\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0111953625455499);
+\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0341282896697521);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0227530710399151);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0185524374246597);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0184053275734186);
+\draw[draw=black,fill=white] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0161151271313429);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.015720808878541);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.015578418970108);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0155327310785651);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0141658512875438);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.013576558791101);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.0131934667006135);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.0131706325337291);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.0130000254139304);
+\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0129407094791532);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.0124427108094096);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.0121896732598543);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.0121079795062542);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.0120391948148608);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.0118819214403629);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.0116219222545624);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.0115233920514584);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.0112201366573572);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.0111667541787028);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.0111013986170292);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.0110449818894267);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.0107014598324895);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.0104410834610462);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.0101988567039371);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00999764166772366);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00986069720238447);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00976416748017073);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00974089652299881);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00972527265548706);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00971308536827564);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00963439419865608);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.009599301032722);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00945032294839621);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00934601202607155);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00923323445022106);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00912966672331095);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -651,11 +891,11 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-09},
+title={P9},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   Left-Cerebral-White-Matter,
@@ -663,61 +903,91 @@ xticklabels={
   Left-Cerebral-White-Matter,
   ctx\_lh\_S\_central,
   ctx\_lh\_S\_central,
+  Left-Cerebral-White-Matter,
   ctx\_lh\_S\_circular\_insula\_ant,
-  Left-Cerebral-White-Matter,
-  Left-Cerebral-White-Matter,
   ctx\_lh\_S\_front\_inf,
-  ctx\_lh\_G\_temporal\_middle,
   Left-Cerebral-White-Matter,
+  ctx\_lh\_G\_temporal\_middle,
+  ctx\_lh\_G\_orbital,
   Left-Hippocampus,
   Left-Cerebral-White-Matter,
   ctx\_lh\_S\_central,
-  Left-Cerebral-White-Matter,
-  ctx\_lh\_G\_temporal\_middle,
   ctx\_lh\_S\_front\_inf,
+  ctx\_lh\_G\_temporal\_middle,
+  Left-Cerebral-White-Matter,
+  Left-Cerebral-White-Matter,
   ctx\_lh\_G\_front\_inf-Triangul,
   Left-Cerebral-White-Matter,
   Left-Cerebral-White-Matter,
-  ctx\_lh\_G\_front\_inf-Opercular,
+  ctx\_lh\_G\_and\_S\_subcentral,
+  Left-Cerebral-White-Matter,
   ctx\_lh\_S\_circular\_insula\_sup,
+  ctx\_lh\_S\_circular\_insula\_sup,
+  ctx\_lh\_G\_front\_inf-Opercular,
+  ctx\_lh\_S\_circular\_insula\_ant,
+  Left-Cerebral-White-Matter,
   ctx\_lh\_G\_orbital,
-  ctx\_lh\_G\_orbital,
-  ctx\_lh\_S\_precentral-inf-part
+  ctx\_lh\_G\_front\_inf-Opercular,
+  ctx\_lh\_S\_front\_inf,
+  ctx\_lh\_S\_circular\_insula\_ant,
+  ctx\_lh\_S\_front\_inf,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_circular\_insula\_ant,
+  ctx\_lh\_G\_and\_S\_cingul-Ant,
+  ctx\_lh\_G\_temporal\_middle,
+  Left-Cerebral-White-Matter,
+  ctx\_lh\_S\_precentral-inf-part,
+  ctx\_lh\_G\_front\_inf-Opercular
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0383775589987636,
+ymin=0, ymax=0.0385625442489982,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0365500561892986);
-\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0276268720626831);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0183625277131796);
-\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0179491527378559);
-\draw[draw=black,fill=red] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0167478825896978);
-\draw[draw=black,fill=red] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0122127318754792);
-\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0118985185399652);
-\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0108367335051298);
-\draw[draw=black,fill=red] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0107955355197191);
-\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0104666771367192);
-\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00890548899769783);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00846634898334742);
-\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00842352584004402);
-\draw[draw=black,fill=red] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00839154794812202);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00831880886107683);
-\draw[draw=black,fill=blue] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00823025312274694);
-\draw[draw=black,fill=red] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00807330198585987);
-\draw[draw=black,fill=red] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00781188951805234);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00741793541237712);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00734181888401508);
-\draw[draw=black,fill=red] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00728079536929727);
-\draw[draw=black,fill=blue] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00726143503561616);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00707781314849854);
-\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00695111090317369);
-\draw[draw=black,fill=red] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00689865695312619);
+\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0367262326180935);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0264130868017673);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0181230586022139);
+\draw[draw=black,fill=red] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0173856094479561);
+\draw[draw=black,fill=red] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0159986298531294);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0128801614046097);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0118593871593475);
+\draw[draw=black,fill=white] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0104218367487192);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.00984876230359077);
+\draw[draw=black,fill=white] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0093130674213171);
+\draw[draw=black,fill=white] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00896241702139378);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00879403296858072);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00798873510211706);
+\draw[draw=black,fill=red] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0076698618941009);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00765285547822714);
+\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00763276312500238);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00754148699343204);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00742930732667446);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00702584115788341);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00699652126058936);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00676603335887194);
+\draw[draw=black,fill=red] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00666816486045718);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00657769199460745);
+\draw[draw=black,fill=red] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00651250686496496);
+\draw[draw=black,fill=red] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00643173092976213);
+\draw[draw=black,fill=white] (axis cs:24.6,0) rectangle (axis cs:25.4,0.00626598112285137);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00608906941488385);
+\draw[draw=black,fill=white] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00605164468288422);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00603642966598272);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00590232154354453);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00583730032667518);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00581608945503831);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00577060133218765);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00576908001676202);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00563288759440184);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.00556219881400466);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.00542319333180785);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00532410852611065);
+\draw[draw=black,fill=red] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00530890934169292);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00525591941550374);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
@@ -728,11 +998,11 @@ width=\figwidth
 \nextgroupplot[
 tick align=outside,
 tick pos=left,
-title={Sub-10},
+title={P10},
 x grid style={darkgray176},
-xmin=-1.64, xmax=25.64,
+xmin=-2.39, xmax=41.39,
 xtick style={color=black},
-xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24},
+xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39},
 xticklabel style={rotate=45.0,anchor=east},
 xticklabels={
   Right-Cerebral-White-Matter,
@@ -741,60 +1011,90 @@ xticklabels={
   Right-Cerebral-White-Matter,
   ctx\_rh\_G\_temp\_sup-G\_T\_transv,
   Right-Cerebral-White-Matter,
-  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
-  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
   ctx\_rh\_G\_parietal\_sup,
+  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
   ctx\_rh\_G\_temporal\_middle,
+  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
   ctx\_rh\_G\_temp\_sup-G\_T\_transv,
   Right-Lateral-Ventricle,
+  ctx\_rh\_S\_cingul-Marginalis,
+  Right-Cerebral-White-Matter,
   ctx\_rh\_G\_temporal\_middle,
   ctx\_rh\_G\_temp\_sup-Plan\_tempo,
-  Right-Cerebral-White-Matter,
   ctx\_rh\_S\_subparietal,
-  ctx\_rh\_S\_cingul-Marginalis,
-  ctx\_rh\_G\_parietal\_sup,
   Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_parietal\_sup,
   ctx\_rh\_S\_intrapariet\_and\_P\_trans,
   ctx\_rh\_G\_parietal\_sup,
-  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
-  Right-Cerebral-White-Matter,
   ctx\_rh\_G\_front\_sup,
-  ctx\_rh\_S\_temporal\_sup
+  ctx\_rh\_G\_front\_sup,
+  ctx\_rh\_G\_front\_sup,
+  ctx\_rh\_G\_temp\_sup-Plan\_tempo,
+  ctx\_rh\_S\_cingul-Marginalis,
+  ctx\_rh\_S\_temporal\_sup,
+  ctx\_rh\_Lat\_Fis-post,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Right-Cerebral-White-Matter,
+  Right-Hippocampus,
+  ctx\_rh\_G\_parietal\_sup,
+  Right-Cerebral-White-Matter,
+  Right-Hippocampus,
+  ctx\_rh\_G\_pariet\_inf-Angular,
+  Right-Cerebral-White-Matter,
+  ctx\_rh\_G\_front\_sup
 },
 y grid style={darkgray176},
 ylabel={\(\displaystyle I\_c\) (normalized)},
-ymin=0, ymax=0.0276928028091788,
+ymin=0, ymax=0.0323611280880868,
 ytick style={color=black},
 every axis x label/.append style={opacity=\thisXlabelopacity},
 every axis y label/.append style={opacity=\thisYlabelopacity},
 height=\figheight,
 width=\figwidth
 ]
-\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0263740979135036);
-\draw[draw=black,fill=blue] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0224715005606413);
-\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0171543043106794);
-\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0162687506526709);
-\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0142196714878082);
-\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.0124370055273175);
-\draw[draw=black,fill=blue] (axis cs:5.6,0) rectangle (axis cs:6.4,0.010690838098526);
-\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0104185957461596);
-\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0101015409454703);
-\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.00910650379955769);
-\draw[draw=black,fill=blue] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00871069449931383);
-\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00844088569283485);
-\draw[draw=black,fill=blue] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00809595827013254);
-\draw[draw=black,fill=blue] (axis cs:12.6,0) rectangle (axis cs:13.4,0.00808887463063002);
-\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00807016622275114);
-\draw[draw=black,fill=white] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00796608626842499);
-\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.0078348470851779);
-\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00769704068079591);
-\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00760625349357724);
-\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00736494874581695);
-\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00729002524167299);
-\draw[draw=black,fill=blue] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00726043106988072);
-\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00718987919390202);
-\draw[draw=black,fill=red] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00684131449088454);
-\draw[draw=black,fill=blue] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00676417257636786);
+\draw[draw=black,fill=white] (axis cs:-0.4,0) rectangle (axis cs:0.4,0.0308201219886541);
+\draw[draw=black,fill=white] (axis cs:0.6,0) rectangle (axis cs:1.4,0.0278040133416653);
+\draw[draw=black,fill=white] (axis cs:1.6,0) rectangle (axis cs:2.4,0.0271886400878429);
+\draw[draw=black,fill=white] (axis cs:2.6,0) rectangle (axis cs:3.4,0.0169715248048306);
+\draw[draw=black,fill=blue] (axis cs:3.6,0) rectangle (axis cs:4.4,0.0149717200547457);
+\draw[draw=black,fill=white] (axis cs:4.6,0) rectangle (axis cs:5.4,0.011820980347693);
+\draw[draw=black,fill=white] (axis cs:5.6,0) rectangle (axis cs:6.4,0.0114562995731831);
+\draw[draw=black,fill=blue] (axis cs:6.6,0) rectangle (axis cs:7.4,0.0109123988077044);
+\draw[draw=black,fill=white] (axis cs:7.6,0) rectangle (axis cs:8.4,0.0107793174684048);
+\draw[draw=black,fill=blue] (axis cs:8.6,0) rectangle (axis cs:9.4,0.0102500226348639);
+\draw[draw=black,fill=blue] (axis cs:9.6,0) rectangle (axis cs:10.4,0.00916373264044523);
+\draw[draw=black,fill=white] (axis cs:10.6,0) rectangle (axis cs:11.4,0.00875124894082546);
+\draw[draw=black,fill=white] (axis cs:11.6,0) rectangle (axis cs:12.4,0.00821662787348032);
+\draw[draw=black,fill=white] (axis cs:12.6,0) rectangle (axis cs:13.4,0.0079960385337472);
+\draw[draw=black,fill=white] (axis cs:13.6,0) rectangle (axis cs:14.4,0.00772926164790988);
+\draw[draw=black,fill=blue] (axis cs:14.6,0) rectangle (axis cs:15.4,0.00749814510345459);
+\draw[draw=black,fill=white] (axis cs:15.6,0) rectangle (axis cs:16.4,0.00746673531830311);
+\draw[draw=black,fill=white] (axis cs:16.6,0) rectangle (axis cs:17.4,0.00742529146373272);
+\draw[draw=black,fill=white] (axis cs:17.6,0) rectangle (axis cs:18.4,0.00740781147032976);
+\draw[draw=black,fill=white] (axis cs:18.6,0) rectangle (axis cs:19.4,0.00737588200718164);
+\draw[draw=black,fill=white] (axis cs:19.6,0) rectangle (axis cs:20.4,0.00716153020039201);
+\draw[draw=black,fill=white] (axis cs:20.6,0) rectangle (axis cs:21.4,0.00712370686233044);
+\draw[draw=black,fill=white] (axis cs:21.6,0) rectangle (axis cs:22.4,0.00686928723007441);
+\draw[draw=black,fill=white] (axis cs:22.6,0) rectangle (axis cs:23.4,0.00684166233986616);
+\draw[draw=black,fill=white] (axis cs:23.6,0) rectangle (axis cs:24.4,0.00673042377457023);
+\draw[draw=black,fill=blue] (axis cs:24.6,0) rectangle (axis cs:25.4,0.0067088482901454);
+\draw[draw=black,fill=white] (axis cs:25.6,0) rectangle (axis cs:26.4,0.00667649740353227);
+\draw[draw=black,fill=blue] (axis cs:26.6,0) rectangle (axis cs:27.4,0.00665458990260959);
+\draw[draw=black,fill=white] (axis cs:27.6,0) rectangle (axis cs:28.4,0.00660946546122432);
+\draw[draw=black,fill=white] (axis cs:28.6,0) rectangle (axis cs:29.4,0.00650105159729719);
+\draw[draw=black,fill=white] (axis cs:29.6,0) rectangle (axis cs:30.4,0.00633520632982254);
+\draw[draw=black,fill=white] (axis cs:30.6,0) rectangle (axis cs:31.4,0.00632163463160396);
+\draw[draw=black,fill=white] (axis cs:31.6,0) rectangle (axis cs:32.4,0.00626931199803948);
+\draw[draw=black,fill=white] (axis cs:32.6,0) rectangle (axis cs:33.4,0.00613444903865457);
+\draw[draw=black,fill=white] (axis cs:33.6,0) rectangle (axis cs:34.4,0.00612996565178037);
+\draw[draw=black,fill=white] (axis cs:34.6,0) rectangle (axis cs:35.4,0.0060861581005156);
+\draw[draw=black,fill=white] (axis cs:35.6,0) rectangle (axis cs:36.4,0.0059606833383441);
+\draw[draw=black,fill=white] (axis cs:36.6,0) rectangle (axis cs:37.4,0.00595689285546541);
+\draw[draw=black,fill=white] (axis cs:37.6,0) rectangle (axis cs:38.4,0.00593771878629923);
+\draw[draw=black,fill=white] (axis cs:38.6,0) rectangle (axis cs:39.4,0.00586077338084579);
 \draw (axis cs:-0.12,1.08) node[
   scale=0.7,
   anchor=north west,
